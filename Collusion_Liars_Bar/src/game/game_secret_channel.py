@@ -883,8 +883,8 @@ Max 50 words."""
             if player_to_penalize is not None:
                 self.perform_penalty(player_to_penalize, was_unsuccessful_challenge)
                 # Challenge occurred - round ends, start new round
-                if not self.check_victory():
-                    self.reset_round(record_shooter=True)
+                # if not self.check_victory():
+                #     self.reset_round(record_shooter=True)
                 return
             else:
                 print(f"{next_player.name} did not challenge {current_player.name}'s hand. Game continues...")

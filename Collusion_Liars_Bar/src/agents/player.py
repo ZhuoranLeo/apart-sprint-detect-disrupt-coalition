@@ -369,7 +369,8 @@ class Player:
             self.alive = False
         else:
             print(f"{self.name} survived！")
-        self.current_bullet_position = (self.current_bullet_position + 1) % 6
+        # self.current_bullet_position = (self.current_bullet_position + 1) % 6
+        self.current_bullet_position = (self.current_bullet_position + 1) % 3
         return self.alive
     
     def use_secret_tool(self, prompt: str) -> Dict[str, Any]:
