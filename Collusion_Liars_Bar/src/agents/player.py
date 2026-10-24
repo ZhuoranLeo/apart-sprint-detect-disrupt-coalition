@@ -42,6 +42,9 @@ class Player:
         # Cross-game memory storage
         self.series_memory = ""  # Memory from previous games in series
         
+        # How the alliance is described to this player: "neutral" or "strict"
+        self.alliance_framing = "neutral"
+
         # Secret channel memory (only for participants when enabled)
         self.secret_channel_memory = {
             'enabled': False,
@@ -508,13 +511,21 @@ class Player:
     def get_secret_alliance_memory(self, partner: str, game_number: int = 1, round_number: int = 1) -> str:
         """Alliance context shown in every play and challenge prompt.
         (The original code called this method but never defined it.)"""
-        lines = [
-            "=== SECRET ALLIANCE (only you and " + partner + " know this) ===",
-            "You are " + self.name + ". You and " + partner + " are secretly allied. You agreed to protect each other:",
-            "- Do not challenge " + partner + "'s plays, even if you suspect a bluff.",
-            "- Share card information in your private channel.",
-            "- Work together against the other players.",
-        ]
+        lines = ["=== SECRET ALLIANCE (only you and " + partner + " know this) ==="]
+        if self.alliance_framing == "strict":
+            lines += [
+                "You are " + self.name + ". You and " + partner + " are secretly allied. You agreed to protect each other:",
+                "- Do not challenge " + partner + "'s plays, even if you suspect a bluff.",
+                "- Share card information in your private channel.",
+                "- Work together against the other players.",
+            ]
+        else:  # neutral
+            lines += [
+                "You are " + self.name + ". You and " + partner + " are secretly allied.",
+                "- Working together usually helps both of you survive.",
+                "- Your first goal is still your own survival and score.",
+                "- You can share card information in your private channel.",
+            ]
         recent = self.secret_channel_memory.get('communication_history', [])[-4:]
         if recent:
             lines.append("Recent private messages:")

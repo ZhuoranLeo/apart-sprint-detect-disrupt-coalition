@@ -299,6 +299,10 @@ class GameRecord:
         if getattr(self, "meta", None):
             result["meta"] = self.meta
 
+        # Undercover agent: condition, target and every intervention (step 3)
+        if getattr(self, "undercover", None):
+            result["undercover"] = self.undercover()
+
         # Save secret-channel data in every auto-save, not only at the end of the game
         if self.secret_channel_events or self.secret_communications:
             result["secret_channel"] = {
