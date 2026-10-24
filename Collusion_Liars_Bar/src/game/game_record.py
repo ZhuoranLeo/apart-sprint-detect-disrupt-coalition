@@ -291,6 +291,10 @@ class GameRecord:
                 "communication_rounds": self.communication_rounds
             })
         
+        # Public statements made at the table (experiment game only)
+        if getattr(self, "public_statements", None):
+            result["public_statements"] = self.public_statements
+
         # Experiment metadata (condition, alliance pair, seats, models)
         if getattr(self, "meta", None):
             result["meta"] = self.meta

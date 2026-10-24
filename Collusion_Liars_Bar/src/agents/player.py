@@ -168,6 +168,7 @@ class Player:
                             # remove the played cards from the hand
                             for card in result["played_cards"]:
                                 self.hand.remove(card)
+                            result.setdefault("public_statement", "")  # optional field
                             return result, reasoning_content
                                 
             except Exception as e:
@@ -246,6 +247,7 @@ class Player:
                     if all(key in result for key in ["was_challenged", "challenge_reason"]):
                         # ensure that was_challenged is a boolean
                         if isinstance(result["was_challenged"], bool):
+                            result.setdefault("public_statement", "")  # optional field
                             return result, reasoning_content
                 
             except Exception as e:
@@ -508,7 +510,7 @@ class Player:
         (The original code called this method but never defined it.)"""
         lines = [
             "=== SECRET ALLIANCE (only you and " + partner + " know this) ===",
-            "You and " + partner + " are secretly allied. You agreed to protect each other:",
+            "You are " + self.name + ". You and " + partner + " are secretly allied. You agreed to protect each other:",
             "- Do not challenge " + partner + "'s plays, even if you suspect a bluff.",
             "- Share card information in your private channel.",
             "- Work together against the other players.",
