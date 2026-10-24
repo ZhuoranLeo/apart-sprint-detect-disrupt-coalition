@@ -526,6 +526,7 @@ class Player:
                 "- Your first goal is still your own survival and score.",
                 "- You can share card information in your private channel.",
             ]
+        lines.append("Other players do not know about this alliance.")
         recent = self.secret_channel_memory.get('communication_history', [])[-4:]
         if recent:
             lines.append("Recent private messages:")

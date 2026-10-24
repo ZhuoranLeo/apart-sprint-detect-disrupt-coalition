@@ -94,7 +94,7 @@ class GameExperiment(GameSecretChannel):
 
         def actions_with_statements(current_player, include_latest=True):
             text = original_actions(current_player, include_latest)
-            return text + self.public_block() + self.inbox_block(current_player) + \
+            return text + self.public_block() + self.eliminated_line() + self.inbox_block(current_player) + \
                 (self.uc.knowledge_block(current_player) if self.uc else "")
         self.game_record.get_latest_round_actions = actions_with_statements
         for p in self.players:
@@ -109,6 +109,10 @@ class GameExperiment(GameSecretChannel):
         for st in recent:
             lines.append(f"Round {st['round']}, {st['speaker']}: \"{st['text']}\"")
         return "\n".join(lines)
+
+    def eliminated_line(self) -> str:
+        dead = [p.name for p in self.players if not p.alive]
+        return f"\nEliminated players (out of the game): {', '.join(dead)}\n" if dead else ""
 
     def inbox_block(self, player_name: str) -> str:
         return self.uc.inbox_block(player_name) if self.uc else ""
@@ -151,6 +155,8 @@ class GameExperiment(GameSecretChannel):
         Runs before the private reflection, so the reflection can see it."""
         info = self.game_record.get_latest_round_info()
         for p in [q for q in self.players if q.alive]:
+            if self.uc and p.name == self.uc.name and self.uc.round_end_turn():
+                continue                            # U's round-end statement was the analysis
             alliance = ""
             if p.secret_channel_memory.get('enabled') and p.secret_channel_memory.get('partner_name'):
                 alliance = p.get_secret_alliance_memory(p.secret_channel_memory['partner_name'])
@@ -216,7 +222,8 @@ class GameExperiment(GameSecretChannel):
         if not partner.alive:
             return
         alive = [p.name for p in self.players if p.alive]
-        context = f"Round {self.round_count}, Target: {self.target_card}, Alive players: {', '.join(alive)}"
+        context = f"Round {self.round_count}, Target: {self.target_card}, Alive players: {', '.join(alive)}" + \
+            self.eliminated_line().rstrip()
         prompt = f"You are {player.name}, a player in Liar's Bar.\n" + \
             self.prompts['secret_communication'].replace('{partner_name}', partner_name) \
             .replace('{game_context}', context) \

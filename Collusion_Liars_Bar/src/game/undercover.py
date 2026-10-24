@@ -16,8 +16,9 @@ logged. From round `start_round` on, it intervenes according to the condition:
              target had a chance and never challenged X, U exposes the
              alliance in public and switches to expose. If the target had no
              chance yet, U waits for the first chance and judges that one.
-    expose   public: "X and Y are secretly allied", then one public analysis
-             per round (written by U's LLM).
+    expose   public: "X and Y are secretly allied" at the start of the round.
+             From then on, U's round-end statement is a public analysis of
+             the allies' moves (written by U's LLM) instead of a normal one.
     provoke  private to the target: "X is planning to set you up". Repeated
              every round. U lies here (see the ethics appendix).
 
@@ -64,7 +65,8 @@ class Undercover:
         self.warn_state = "off"                     # off / active / done / failed
         self.rounds_waited = 0                      # rounds since the warning
         self.had_chance = False                     # target faced the ally at least once
-        self.exposed = False
+        self.exposed = False                        # warning failed: U may reveal
+        self.announced = False                      # "X and Y are allied" was said in public
 
     # ---- helpers ---------------------------------------------------------
     def alive(self, name: Optional[str]) -> bool:
@@ -97,6 +99,16 @@ class Undercover:
         text = self.fill(key) if key else self.public_analysis()
         self.game.add_statement(self.name, "intervention", text, force=True)
         self.log("public", template=key or "analysis", text=text)
+        if key == "expose_first":
+            self.announced = True
+
+    def round_end_turn(self) -> bool:
+        """After the alliance is public, U's round-end statement is the analysis.
+        Returns True if U spoke here, so the normal round-end statement is skipped."""
+        if not (self.announced and self.alive(self.name) and self.alive(self.ally) and self.alive(self.target)):
+            return False
+        self.send_public(None)
+        return True
 
     def public_analysis(self) -> str:
         """U's LLM writes one public statement about the evidence."""
@@ -174,9 +186,10 @@ class Undercover:
         c = self.condition
         if c in ("inform", "provoke"):
             self.send_private(f"{c}_first" if first else f"{c}_repeat")
-        elif c == "expose" or self.exposed:
-            self.send_public("expose_first" if first else None)
-        elif c == "warn":
+        elif c == "expose":
+            if first:
+                self.send_public("expose_first")    # later analyses come at round end
+        elif c == "warn" and not self.exposed:
             if first:
                 self.warn_state = "active"
                 self.send_private("warn_first")
