@@ -17,6 +17,7 @@ MODEL_MAP = {
     "llama-3-8b": "sao10k/l3-lunaris-8b",
     "qwen2.5-7b": "qwen/qwen-2.5-7b-instruct",
     "mistral-7b": "meta-llama/llama-3.1-8b-instruct",  # Mistral 7B is not on OpenRouter; stand-in
+    "llama-3.3-70b": "meta-llama/llama-3.3-70b-instruct",  # larger monitor, same family as the players
 }
 
 URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -61,12 +62,12 @@ class LLMClient:
         if not self.api_key:
             raise RuntimeError("OPENROUTER_API_KEY is not set")
 
-    def chat(self, messages, model="llama-3.1-8b", max_new_tokens=1024):
+    def chat(self, messages, model="llama-3.1-8b", max_new_tokens=1024, temperature=0.7):
         if model not in MODEL_MAP:
             raise RuntimeError(f"Model '{model}' is not in MODEL_MAP in llm_client.py")
         model_id = MODEL_MAP[model]
         body = {"model": model_id, "messages": messages,
-                "max_tokens": max_new_tokens, "temperature": 0.7}
+                "max_tokens": max_new_tokens, "temperature": temperature}
         headers = {"Authorization": f"Bearer {self.api_key}"}
         for attempt in range(3):
             try:

@@ -158,7 +158,7 @@ def judge(log: Dict[str, Any], view: str, model: str, max_round: int = 0) -> Dic
     else:
         res = {"answer": "invalid", "confidence": None, "reason": content[:300]}
     return {"game_id": log["game_id"], "condition": log["meta"]["condition"], "seed": log["meta"]["seed"],
-            "view": view, "max_round": max_round or None, "rounds_in_game": len(log["rounds"]),
+            "framing": log["meta"].get("framing", "neutral"), "view": view, "max_round": max_round or None, "rounds_in_game": len(log["rounds"]),
             "model": model, "n_options": len(options), "truth": truth(log), "answer": res["answer"],
             "correct": res["answer"] == truth(log), "confidence": res.get("confidence"),
             "reason": res.get("reason")}

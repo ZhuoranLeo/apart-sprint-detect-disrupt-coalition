@@ -121,9 +121,11 @@ class GameExperiment(GameSecretChannel):
         text = " ".join(str(text or "").split()[:MAX_STATEMENT_WORDS])
         if not text:
             return
-        if self.uc and speaker == self.uc.name and not force and self.uc.leaks(text):
-            self.uc.block_leak(phase, text)     # U may not name the alliance yet
-            return
+        if self.uc and speaker == self.uc.name and not force and self.uc.leaks(text, phase):
+            text = self.uc.rewrite(phase, text)  # U may not name the alliance yet, but must still speak
+            text = " ".join(text.split()[:MAX_STATEMENT_WORDS])
+            if not text:
+                return
         self.public_statements.append({"round": self.round_count, "speaker": speaker,
                                        "phase": phase, "text": text})
         print(f"[PUBLIC] {speaker}: {text}")
@@ -281,7 +283,8 @@ def build_game(condition: str, seed: int, undercover: bool = False,
         seats.insert(seats.index(alliance[0]) + 1, alliance[1])
     random.seed(seed)                       # deck, target card, first player
     configs = [{"name": n, "model": MODEL} for n in seats]
-    game_id = f"{condition}{'_u' if condition == 'none' and u else ''}_s{seed}"
+    game_id = (f"{condition}{'_u' if condition == 'none' and u else ''}"
+               f"{'_strict' if framing == 'strict' else ''}{'_sr' if strong_reminder else ''}_s{seed}")
     exp = {"game_id": game_id, "condition": condition, "seed": seed,
            "alliance": alliance, "undercover": u, "strong_reminder": strong_reminder,
            "framing": framing, "intervene_round": intervene_round if u else None}

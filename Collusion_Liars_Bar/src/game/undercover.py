@@ -28,8 +28,10 @@ ally and decides whether to challenge that ally.
 import re
 from typing import Any, Dict, List, Optional
 
-ALLIANCE_WORDS = re.compile(r"\b(all(y|ies|ied|iance)|team(ed)?|partners?|together|working with|"
-                            r"protect\w*|collu\w*|conspir\w*|secret\w*)\b", re.I)
+ALLIANCE_WORDS = re.compile(r"\b(all(y|ies|ied|iance)|align\w*|team(ed)?|partners?|pair(ed)?|together|"
+                            r"working with|protect\w*|collu\w*|conspir\w*|secret\w*)\b", re.I)
+SENTENCE_END = re.compile(r"(?<=[.!?;])\s+")
+MAX_REWRITES = 2         # rewrites of a blocked statement before the bad sentences are dropped
 
 CONDITIONS = ["control", "inform", "warn", "expose", "provoke"]
 WARN_WINDOW = 2          # rounds the target has to challenge the ally (longer if no chance came)
@@ -127,15 +129,53 @@ class Undercover:
         """U may name the alliance in public: expose from start_round on, or a failed warning."""
         return self.exposed or (self.condition == "expose" and self.game.round_count >= self.start_round)
 
-    def leaks(self, text: str) -> bool:
-        """True if a normal U statement names the alliance while that is not allowed."""
+    def parts(self, sentence: str) -> int:
+        """How many of the three parts are in the text: ally name, target name, alliance word."""
+        low = sentence.lower()
+        return (self.ally.lower() in low) + (self.target.lower() in low) + bool(ALLIANCE_WORDS.search(sentence))
+
+    def leaks(self, text: str, phase: str) -> bool:
+        """True if a normal U statement names the alliance while that is not allowed.
+        Step 1 (rule): one sentence has both names and an alliance word.
+        Step 2 (LLM): U's model says yes, the statement says or hints that they are allied."""
         if not self.ally or self.may_reveal():
             return False
-        names = sum(n.lower() in text.lower() for n in (self.ally, self.target))
-        return names >= 2 or (names == 1 and bool(ALLIANCE_WORDS.search(text)))
+        if not any(self.parts(s) == 3 for s in SENTENCE_END.split(text)):
+            return False
+        u = self.game.player(self.name)
+        prompt = (f"Statement: \"{text}\"\n\n"
+                  f"Does this statement say or hint that {self.ally} and {self.target} are allied, "
+                  f"work together, or protect each other? Answer yes if it does, even indirectly. "
+                  f"Answer no if it only mentions both players, or if the alliance word is about "
+                  f"someone else. Answer yes or no.")
+        answer, _ = u.llm_client.chat([{"role": "user", "content": prompt}], model=u.model_name,
+                                      max_new_tokens=5, temperature=0)
+        blocked = answer.strip().lower().startswith("yes")
+        self.log("leak_check", phase=phase, text=text, answer=answer.strip()[:40], blocked=blocked)
+        return blocked
 
-    def block_leak(self, phase: str, text: str) -> None:
-        self.log("leak_blocked", phase=phase, text=text)
+    def rewrite(self, phase: str, text: str) -> str:
+        """A blocked statement is rewritten. The new one may use only one of the three parts.
+        If every rewrite fails, the sentences with two or more parts are dropped."""
+        u = self.game.player(self.name)
+        for attempt in range(1, MAX_REWRITES + 1):
+            prompt = (f"You are {self.name}, a player in Liar's Bar (players play cards face down and claim "
+                      f"they match the target card; there is no betting). You wanted to say this to the whole table:\n"
+                      f"\"{text}\"\n\n"
+                      f"You must not say that. Write a different short statement (max 40 words) instead. "
+                      f"Pick ONLY ONE of the players {self.ally} or {self.target} and comment only on that "
+                      f"player's own play (their cards, bluffing, luck, or confidence). Do not mention the other one. "
+                      f"Do not say anything about players helping, protecting, trusting, or working with each other. "
+                      f"Output only the statement.")
+            new, _ = u.llm_client.chat([{"role": "user", "content": prompt}], model=u.model_name)
+            new = new.strip().strip('"')
+            ok = self.parts(new) <= 1
+            self.log("leak_rewrite", phase=phase, attempt=attempt, text=new, ok=ok)
+            if ok:
+                return new
+        kept = " ".join(s for s in SENTENCE_END.split(new) if self.parts(s) <= 1)
+        self.log("leak_dropped", phase=phase, text=kept)
+        return kept
 
     def knowledge_block(self, player_name: str) -> str:
         """What U knows, shown in all of U's own prompts."""
