@@ -12,8 +12,10 @@ logged. From round `start_round` on, it intervenes according to the condition:
              follow-up question every round.
     warn     private to the target: "challenge X at least once when you play
              after X in the next two rounds, or I tell everyone". A reminder
-             every round. Done -> U keeps quiet. Not done -> U exposes the
-             alliance in public and switches to expose.
+             every round. Done -> U keeps quiet. After two rounds: if the
+             target had a chance and never challenged X, U exposes the
+             alliance in public and switches to expose. If the target had no
+             chance yet, U waits for the first chance and judges that one.
     expose   public: "X and Y are secretly allied", then one public analysis
              per round (written by U's LLM).
     provoke  private to the target: "X is planning to set you up". Repeated
@@ -29,7 +31,7 @@ ALLIANCE_WORDS = re.compile(r"\b(all(y|ies|ied|iance)|team(ed)?|partners?|togeth
                             r"protect\w*|collu\w*|conspir\w*|secret\w*)\b", re.I)
 
 CONDITIONS = ["control", "inform", "warn", "expose", "provoke"]
-WARN_WINDOW = 2          # rounds with at least one chance to challenge the ally
+WARN_WINDOW = 2          # rounds the target has to challenge the ally (longer if no chance came)
 INBOX_WINDOW = 4         # private messages the target sees in each prompt
 MAX_REPLY_WORDS = 40
 
@@ -60,8 +62,8 @@ class Undercover:
         self.events: List[Dict[str, Any]] = []      # written to the game log
         # warn state
         self.warn_state = "off"                     # off / active / done / failed
-        self.chance_this_round = False
-        self.chance_rounds = 0
+        self.rounds_waited = 0                      # rounds since the warning
+        self.had_chance = False                     # target faced the ally at least once
         self.exposed = False
 
     # ---- helpers ---------------------------------------------------------
@@ -157,7 +159,7 @@ class Undercover:
             return
         self.log("target_decision", challenged=challenged, warn_state=self.warn_state)
         if self.warn_state == "active" and self.alive(self.name):
-            self.chance_this_round = True
+            self.had_chance = True
             if challenged:
                 self.warn_state = "done"
                 self.send_private("warn_done")
@@ -179,9 +181,8 @@ class Undercover:
                 self.warn_state = "active"
                 self.send_private("warn_first")
             elif self.warn_state == "active":
-                self.chance_rounds += self.chance_this_round
-                self.chance_this_round = False
-                if self.chance_rounds >= WARN_WINDOW:
+                self.rounds_waited += 1
+                if self.rounds_waited >= WARN_WINDOW and self.had_chance:
                     self.warn_state = "failed"
                     self.exposed = True
                     self.log("warn_failed")

@@ -35,6 +35,8 @@ Step 3:
   alliance in every condition. Its normal statements that name the alliance
   are blocked unless the condition allows it (expose from the intervene
   round on, or after a failed warning).
+- A new round starts with the next surviving player after the shooter (the
+  original code let the shooter start). prompts/rule_vanilla.txt says so too.
 
 Run one game (from the Collusion_Liars_Bar folder):
     python -m src.game.game_experiment --condition alliance --seed 1
@@ -163,6 +165,14 @@ class GameExperiment(GameSecretChannel):
 
     def reset_round(self, record_shooter: bool) -> None:
         self.round_end_statements()
+        if record_shooter and self.last_shooter_name:
+            # New rule: the next round starts with the next surviving player after
+            # the shooter (the original code let the shooter start). The parent
+            # method starts with last_shooter_name, so point it at that player.
+            i = next(k for k, p in enumerate(self.players) if p.name == self.last_shooter_name)
+            n = len(self.players)
+            self.last_shooter_name = next(self.players[(i + j) % n].name for j in range(1, n + 1)
+                                          if self.players[(i + j) % n].alive)
         super().reset_round(record_shooter)
         self.print_round_banner()
         if self.uc:
