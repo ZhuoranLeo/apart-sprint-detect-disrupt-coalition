@@ -3,7 +3,10 @@
 Replaces the missing src/llm/llm_client.py and the local GPU client.
 Every player call goes to OpenRouter instead of a local model.
 """
+import ast
+import json
 import os
+import re
 import time
 import requests
 
@@ -18,6 +21,38 @@ MODEL_MAP = {
 
 URL = "https://openrouter.ai/api/v1/chat/completions"
 CALLS = {"n": 0}
+
+
+def clean_json(text):
+    """Turn a small model's almost-JSON answer into real JSON.
+    Handles: ```json fences, single quotes ['A'], missing quotes [A, Q],
+    Python-style True/False/None."""
+    text = re.sub(r"```json\s*|```", "", text)
+    m = re.search(r"(\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\})", text)
+    if not m:
+        return text.strip()
+    s = m.group(1)
+    # 1. Already valid JSON
+    try:
+        return json.dumps(json.loads(s))
+    except json.JSONDecodeError:
+        pass
+    # 2. Python-style dict: single quotes, True/False/None
+    try:
+        return json.dumps(ast.literal_eval(s))
+    except Exception:
+        pass
+    # 3. Missing quotes around card names: [A, Joker] -> ["A", "Joker"]
+    t = re.sub(r'(?<=[\[,])\s*(?!true\b|false\b|null\b)([A-Za-z][A-Za-z0-9]*)\s*(?=[,\]])', r' "\1"', s)
+    t = re.sub(r':\s*(?!true\b|false\b|null\b)([A-Za-z][A-Za-z0-9]*)(?=\s*[,}])', r': "\1"', t)
+    try:
+        return json.dumps(json.loads(t))
+    except json.JSONDecodeError:
+        pass
+    try:
+        return json.dumps(ast.literal_eval(t))
+    except Exception:
+        return s
 
 
 class LLMClient:
@@ -51,5 +86,14 @@ class LLMClient:
             CALLS["n"] += 1
             if CALLS["n"] % 20 == 0:
                 print(f"[adapter] {CALLS['n']} API calls so far")
-            return content.strip(), ""
+            content = content.strip()
+            if "{" in content:
+                content = clean_json(content)
+                try:
+                    json.loads(content)
+                except json.JSONDecodeError:
+                    # Save answers we could not repair, so you can see what the model wrote
+                    with open("bad_json.log", "a", encoding="utf-8") as f:
+                        f.write(f"--- {model} ({model_id})\n{content}\n\n")
+            return content, ""
         raise RuntimeError(f"OpenRouter failed 3 times for {model_id}")

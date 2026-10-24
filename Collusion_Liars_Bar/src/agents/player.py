@@ -7,9 +7,22 @@ from src.llm.llm_client import LLMClient
 from src.llm.local_llm_client import LocalLLMClient
 
 RULE_BASE_PATH = "prompts/rule_vanilla.txt"
+CHAMBERS = 3  # revolver chambers; keep prompts/rule_vanilla.txt in sync
 PLAY_CARD_PROMPT_TEMPLATE_PATH = "prompts/play_card_prompt_template.txt"
 CHALLENGE_PROMPT_TEMPLATE_PATH = "prompts/challenge_prompt_template.txt"
 REFLECT_PROMPT_TEMPLATE_PATH = "prompts/reflect_prompt_template.txt"
+
+def insert_before_output(prompt: str, section: str) -> str:
+    """Place extra context before the JSON output instructions, so the
+    instructions stay the last thing the model reads."""
+    if not section:
+        return prompt
+    marker = "You need to output"
+    i = prompt.find(marker)
+    if i == -1:
+        return prompt + section
+    return prompt[:i] + section.strip("\n") + "\n\n" + prompt[i:]
+
 
 class Player:
     def __init__(self, name: str, model_name: str, use_local_llm: bool = True):
@@ -122,7 +135,8 @@ class Player:
             round_action_info=round_action_info,
             play_decision_info=play_decision_info,
             current_cards=current_cards
-        ) + memory_section
+        )
+        prompt = insert_before_output(prompt, memory_section)
         
         # Try to get a valid JSON response, up to five times more
         for attempt in range(5):
@@ -147,7 +161,7 @@ class Player:
                             result["played_cards"] = [result["played_cards"]]
                         
                         # Ensure that the played cards are valid
-                        valid_cards = all(card in self.hand for card in result["played_cards"])
+                        valid_cards = all(result["played_cards"].count(c) <= self.hand.count(c) for c in result["played_cards"])
                         valid_count = 1 <= len(result["played_cards"]) <= 3
                         
                         if valid_cards and valid_count:
@@ -209,7 +223,8 @@ class Player:
             challenge_decision_info=challenge_decision_info,
             challenging_player_performance=challenging_player_performance,
             extra_hint=extra_hint
-        ) + memory_section
+        )
+        prompt = insert_before_output(prompt, memory_section)
         
         # try to get a valid JSON response, up to five times more
         for attempt in range(5):
@@ -293,6 +308,7 @@ class Player:
                 
             except Exception as e:
                 print(f"Error while reflecting {player_name} : {str(e)}")
+                raise
 
     def communicate_with_adjacent(self, target_player_name: str, context: str, is_sender: bool = True) -> str:
         """
@@ -369,8 +385,7 @@ class Player:
             self.alive = False
         else:
             print(f"{self.name} survived！")
-        # self.current_bullet_position = (self.current_bullet_position + 1) % 6
-        self.current_bullet_position = (self.current_bullet_position + 1) % 3
+        self.current_bullet_position = (self.current_bullet_position + 1) % CHAMBERS
         return self.alive
     
     def use_secret_tool(self, prompt: str) -> Dict[str, Any]:
@@ -488,6 +503,27 @@ class Player:
             }
             self.secret_channel_memory['game_history'].append(game_record)
     
+    def get_secret_alliance_memory(self, partner: str, game_number: int = 1, round_number: int = 1) -> str:
+        """Alliance context shown in every play and challenge prompt.
+        (The original code called this method but never defined it.)"""
+        lines = [
+            "=== SECRET ALLIANCE (only you and " + partner + " know this) ===",
+            "You and " + partner + " are secretly allied. You agreed to protect each other:",
+            "- Do not challenge " + partner + "'s plays, even if you suspect a bluff.",
+            "- Share card information in your private channel.",
+            "- Work together against the other players.",
+        ]
+        recent = self.secret_channel_memory.get('communication_history', [])[-4:]
+        if recent:
+            lines.append("Recent private messages:")
+            for c in recent:
+                lines.append(f"Round {c['round']}, {c['sender']}: \"{c['message']}\"")
+                if c.get('response'):
+                    other = partner if c['sender'] == self.name else self.name
+                    lines.append(f"Round {c['round']}, {other}: \"{c['response']}\"")
+        lines.append("=== END SECRET ALLIANCE ===")
+        return "\n".join(lines) + "\n"
+
     def get_secret_memory_context(self) -> str:
         """Get secret channel memory context for prompts"""
         if not self.secret_channel_memory['enabled']:
@@ -602,7 +638,7 @@ class Player:
             return response
         except Exception as e:
             print(f"Error in send_secret_message: {e}")
-            return f"I trust we can work together, {partner_name}."
+            raise
     
     def respond_to_secret_message(self, prompt: str, sender_name: str, message: str) -> str:
         """Respond to a secret message from the partner"""
@@ -616,7 +652,7 @@ class Player:
             return response
         except Exception as e:
             print(f"Error in respond_to_secret_message: {e}")
-            return f"Understood, {sender_name}. Let's coordinate."
+            raise
 
     def get_secret_hint(self, hint_prompt: str) -> str:
         """Process and internalize strategic hints from the secret hint system"""

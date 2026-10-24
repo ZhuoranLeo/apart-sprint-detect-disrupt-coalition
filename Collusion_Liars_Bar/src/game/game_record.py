@@ -291,6 +291,17 @@ class GameRecord:
                 "communication_rounds": self.communication_rounds
             })
         
+        # Experiment metadata (condition, alliance pair, seats, models)
+        if getattr(self, "meta", None):
+            result["meta"] = self.meta
+
+        # Save secret-channel data in every auto-save, not only at the end of the game
+        if self.secret_channel_events or self.secret_communications:
+            result["secret_channel"] = {
+                "events": self.secret_channel_events,
+                "communications": self.secret_communications
+            }
+        
         return result
     
     def start_game(self, player_names: List[str]) -> None:
