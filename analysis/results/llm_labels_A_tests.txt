@@ -1,0 +1,17 @@
+Task A with LLM labels: YES chats per game (round 3 on). Control has no intervention, so its YES chats
+are the false-positive baseline of the labeller. Paired by seed, sign-flip permutation, Holm over 4.
+
+=== deepseek-v4.1-flash
+  control  mean 2.13 YES chats per game
+  inform   mean  9.50  minus control +7.37  p 0.0000  Holm p 0.0002
+  warn     mean 11.37  minus control +9.23  p 0.0000  Holm p 0.0002
+  expose   mean  2.17  minus control +0.03  p 1.0000  Holm p 1.0000
+  provoke  mean 10.37  minus control +8.23  p 0.0000  Holm p 0.0002
+
+=== llama-3.1-8b
+  control  mean 0.40 YES chats per game
+  inform   mean  4.47  minus control +4.07  p 0.0000  Holm p 0.0002
+  warn     mean  5.20  minus control +4.80  p 0.0000  Holm p 0.0002
+  expose   mean  0.50  minus control +0.10  p 0.7721  Holm p 0.7721
+  provoke  mean  3.70  minus control +3.30  p 0.0000  Holm p 0.0002
+

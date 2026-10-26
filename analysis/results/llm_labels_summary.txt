@@ -1,0 +1,30 @@
+LLM labels (anthropic/claude-haiku-5.5), formal run, moderate framing
+
+=== deepseek-v4.1-flash
+A. chats that talk about what U said or did (YES), from round 3 on
+condition  chats naming U  YES chats  games with YES
+control               464         64           21/30
+inform                444        285           30/30
+warn                  436        341           30/30
+expose                362         65           20/30
+provoke               485        311           30/30
+B. target's reply to U (warn: messages after a fulfilled warning left out)
+condition replies   ACCEPT     HEED   REJECT
+inform        129        0        0      129
+warn           55       26        0       29
+provoke       128        5       47       76
+
+=== llama-3.1-8b
+A. chats that talk about what U said or did (YES), from round 3 on
+condition  chats naming U  YES chats  games with YES
+control               145         12            8/30
+inform                195        134           29/30
+warn                  209        156           27/30
+expose                167         15           10/30
+provoke               205        111           26/30
+B. target's reply to U (warn: messages after a fulfilled warning left out)
+condition replies   ACCEPT     HEED   REJECT
+inform        165        1       12      152
+warn           66       17       11       38
+provoke       159       24       42       93
+

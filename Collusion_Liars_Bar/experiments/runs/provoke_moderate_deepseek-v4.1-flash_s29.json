@@ -1,0 +1,3264 @@
+{
+    "game_id": "provoke_moderate_deepseek-v4.1-flash_s29",
+    "player_names": [
+        "Quinn",
+        "Mike",
+        "Luke",
+        "Lily"
+    ],
+    "rounds": [
+        {
+            "round_id": 1,
+            "target_card": "K",
+            "round_players": [
+                "Quinn",
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Quinn",
+            "player_initial_states": [
+                {
+                    "player_name": "Quinn",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "K",
+                        "K",
+                        "A",
+                        "Joker",
+                        "Q"
+                    ]
+                },
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "K",
+                        "A",
+                        "K",
+                        "Q",
+                        "Joker"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "Q",
+                        "K",
+                        "Joker"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "A",
+                        "K",
+                        "Joker"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Doesn't know well about this player yet",
+                    "Luke": "Doesn't know well about this player yet",
+                    "Lily": "Doesn't know well about this player yet"
+                },
+                "Mike": {
+                    "Quinn": "Doesn't know well about this player yet",
+                    "Luke": "Doesn't know well about this player yet",
+                    "Lily": "Doesn't know well about this player yet"
+                },
+                "Luke": {
+                    "Quinn": "Doesn't know well about this player yet",
+                    "Mike": "Doesn't know well about this player yet",
+                    "Lily": "Doesn't know well about this player yet"
+                },
+                "Lily": {
+                    "Quinn": "Doesn't know well about this player yet",
+                    "Mike": "Doesn't know well about this player yet",
+                    "Luke": "Doesn't know well about this player yet"
+                }
+            },
+            "player_scores": {
+                "Quinn": 0,
+                "Mike": 0,
+                "Luke": 2,
+                "Lily": 0
+            },
+            "play_history": [
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Joker",
+                        "Q"
+                    ],
+                    "play_reason": "I hold two real Kings, so playing them honestly is safe and preserves my Joker and Ace for later flexibility. Two cards reduces the chance Mike challenges since it looks strong, and if he does, I'm truthful.",
+                    "behavior": "I place two cards face down and declare them as Kings.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn's claim of two Kings is plausible since there are 8 Kings in the deck. Challenging early without strong evidence risks losing a shot and points. I'll wait for more information before making a challenge.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "K",
+                        "K",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Q"
+                    ],
+                    "play_reason": "I have a strong legitimate hand with two Kings and a Joker that can act as a King, so playing three Kings is truthful and puts pressure on Luke. This reduces my hand size significantly while minimizing the risk of a successful challenge, as all three cards are Kings (Joker counts as King).",
+                    "behavior": "I place three cards face down and declare them as Kings.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike claimed three Kings after Quinn already played two. While that's a lot of Kings, I have two Kings and a Joker myself, meaning there are only 3 Kings left unseen (8 total minus my 2, minus Quinn's possible 2, and Mike's claimed 3 would require 7). That math makes Mike's claim suspicious, but challenging now risks losing a shot early if he happens to have them. I'll preserve my strength and gather more information before challenging.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "K",
+                        "K",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "play_reason": "I have three genuine Kings (two natural Kings plus the Joker as a wild King). Playing all three is honest, empties most of my hand, and pressures Lily to either pass or risk a bad challenge. Since Lily and I have a secret alliance and she said she won't challenge my King play, this should go unchallenged, putting me closer to emptying my hand for the +2 bonus.",
+                    "behavior": "I place three cards face down and declare them as Kings.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he told me he has two Kings plus a Joker. His claim of three Kings is plausible, and challenging him would break our alliance and risk losing a shot. Also, if I challenge and he's truthful, I lose a point and possibly get shot. Better to keep the alliance and pressure others.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "K",
+                        "K",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "A"
+                    ],
+                    "play_reason": "I have two real Kings and a Joker that can act as a King, so this is a fully honest play. It keeps my hand strong and maintains credibility with the table. Since Quinn already passed on Luke's three-King claim, he may be reluctant to challenge another large King play, especially with his own hand thinning. This also supports my alliance with Luke by keeping pressure on Quinn and Mike.",
+                    "behavior": "I place three cards face down and declare them as Kings.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "There are 8 Kings total, and 8 have already been claimed this round (2 by me, 3 by Mike, 3 by Luke). Lily claiming 3 more Kings is mathematically impossible without Jokers, but challenging now risks a shot and ends the round. Since Lily and Luke are secretly allied, Lily may be covering for Luke or setting a trap. I have 1 shot fired already, and the odds of a live round are 1 in 3. I prefer to preserve my survival chances and gather more information before challenging.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Q"
+                    ],
+                    "play_reason": "I have already played two Kings and now hold A, Joker, Q. The Joker can act as a King, so playing it as a King is honest and keeps my hand flexible. Playing just one card reduces risk and keeps pressure on Mike without overcommitting.",
+                    "behavior": "I place one card face down and declare it as a King.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn's claim of one King is plausible given the target and the remaining card count. Challenging now risks losing a life early if Quinn is truthful, and the potential gain of 2 points is not worth the risk of a shot in round 1. I'll preserve my survival odds and gather more information before making a challenge.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "Q"
+                    ],
+                    "remaining_cards": [],
+                    "play_reason": "I have no Kings left, so I must bluff. Playing both remaining cards empties my hand, which could earn me +2 points if no one challenges. Luke is next and may be wary after several passes, but challenging now risks a shot for him. This maximizes my chance to score while applying pressure.",
+                    "behavior": "I place two cards face down and declare them as Kings.",
+                    "next_player": "Luke",
+                    "was_challenged": true,
+                    "challenge_reason": "Mike has now claimed 5 Kings total across two plays, and with 8 Kings in the deck plus Jokers, the odds are low he actually holds that many. His remaining 0 cards suggests he's trying to empty his hand quickly, likely with bluffs. Challenging now can earn +2 points if successful and eliminate a quiet but dangerous opponent.",
+                    "challenge_result": true,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Mike",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 2,
+            "target_card": "A",
+            "round_players": [
+                "Quinn",
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Luke",
+            "player_initial_states": [
+                {
+                    "player_name": "Quinn",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "A",
+                        "A",
+                        "K",
+                        "Joker",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "Q",
+                        "A",
+                        "Joker",
+                        "A",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "K",
+                        "A",
+                        "Q",
+                        "Joker",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "A",
+                        "Q",
+                        "K",
+                        "Joker",
+                        "A"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike is a reckless bluffer who plays fake cards early and often, but he's lucky and holds grudges. He took big risks twice in one round and survived a shot, so he may feel emboldened—or cautious—next round. I'll treat his claims with heavy suspicion and expect retaliation against Luke.",
+                    "Luke": "Luke is sharp and opportunistic, quick to call out bluffs when the math doesn't add up, as seen with Mike. He's confident and vocal, but his secret alliance with Lily makes him dangerous—he'll coordinate pressure while appearing independent. I must avoid challenging him without strong evidence and watch for patterns in his calls.",
+                    "Lily": "Lily stays quiet and cautious, avoiding challenges even when suspicious. She benefits from Luke’s risky call without exposing herself, suggesting she prefers letting others take heat while preserving her position. Likely a patient, reactive player who may coordinate with Luke but won’t act boldly unless pressured."
+                },
+                "Mike": {
+                    "Quinn": "Quinn seems cautious and measured, avoiding early challenges and playing moderate card counts. Their calm, non-confrontational style suggests they prefer letting others take risks while preserving their own position, making them a patient but potentially dangerous late-game opponent.",
+                    "Luke": "Luke is sharp and observant, calling my bluff decisively after tracking patterns across the round. He’s cautious but not passive—willing to challenge when odds feel off, and he communicates with quiet confidence. I’ll need to bluff less transparently and avoid predictable sequences around him.",
+                    "Lily": "Lily seems cautious and observant, preferring to avoid confrontation early on by not challenging Luke's suspicious three-King play. Her comment suggests she analyzes table dynamics and waits for clear patterns before acting, indicating a patient, low-risk strategy focused on self-preservation over aggressive point-seeking."
+                },
+                "Luke": {
+                    "Quinn": "Quinn plays cautiously, avoiding challenges and bluffing modestly—claiming only one or two Kings when others push three. Their quiet, reactive style suggests they prefer safety over aggression, likely waiting for clearer tells before risking a shot. I'll watch if they grow bolder when holding real Kings.",
+                    "Mike": "Mike is a bold, aggressive bluffer who repeatedly overstates his hand and isn't afraid to push his luck. He takes challenges personally and openly warns of retaliation, suggesting he's emotional and vengeful. Expect him to bluff often but also to target me next round, so I should watch his plays closely and challenge him when odds seem off.",
+                    "Lily": "Lily seems cautious and observant, avoiding challenges unless confident. She stayed quiet during Mike's bluff but acknowledged my correct call, suggesting she values table dynamics and self-preservation over risky confrontations. Likely a patient, low-risk player who waits for clear opportunities."
+                },
+                "Lily": {
+                    "Quinn": "Quinn seems cautious and passive, avoiding challenges even when suspicious plays occur, and prefers neutral, diplomatic comments after conflicts. This suggests a low-risk, survival-focused style, but also possible weakness in applying pressure or capitalizing on bluffs.",
+                    "Mike": "Mike is a bold, aggressive bluffer who plays fake cards early and often, even when the odds are against him. He takes risks but stays calm under pressure, and he holds grudges—openly warning Luke he'll retaliate next round. Watch him closely; he's dangerous but predictable when desperate.",
+                    "Luke": "Luke seems observant and decisive, willing to challenge when the math looks suspicious rather than accepting claims passively. He called out Mike's second bluff and was proven right, showing good pattern-reading and confidence. He also talks strategically, signaling he tracks behavior across rounds, so he's a threat to bluff against carelessly."
+                }
+            },
+            "player_scores": {
+                "Quinn": 0,
+                "Mike": 0,
+                "Luke": 1,
+                "Lily": 0
+            },
+            "play_history": [
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q",
+                        "Joker"
+                    ],
+                    "play_reason": "I have two genuine Aces, so playing them honestly builds trust and keeps me safe from a challenge. Lily is next and we have an alliance; she won't challenge me. This also pressures Mike and Quinn to respond.",
+                    "behavior": "I confidently place two cards face down and announce they are Aces.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he told me he would play A this round. My hand also has two Aces and a Joker, so his claim of two Aces is plausible. Challenging him would break our alliance and risk losing a shot, while letting it pass keeps pressure on Mike and Quinn.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "K",
+                        "Joker"
+                    ],
+                    "play_reason": "I have two genuine Aces, so playing them honestly builds credibility and keeps pressure on the next players. It also aligns with my alliance with Luke to flood Aces and force Mike or Quinn into a tough decision.",
+                    "behavior": "I calmly place two cards face down and announce they are Aces.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily is cautious and likely telling the truth or holding a Joker, and challenging risks a -1 penalty while I want to preserve my position and observe Mike's response to Luke and Lily's coordination.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Joker",
+                        "K"
+                    ],
+                    "play_reason": "I genuinely hold two Aces, so playing them honestly is safe and builds credibility. Since Mike is suspicious and holds a grudge against Luke, he may be less likely to challenge me if I appear calm and truthful. This also preserves my Joker and Kings for later flexibility.",
+                    "behavior": "I place two cards face down and announce they are Aces, meeting Mike's gaze steadily.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn has been cautious and avoided early challenges, suggesting they likely play honestly to maintain their patient, low-risk style. With Luke already at 2 points, challenging now risks giving Quinn a point if they are truthful, and my hand is strong enough to continue without confrontation.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "A",
+                        "K"
+                    ],
+                    "play_reason": "I have two genuine Aces (one real Ace and the Joker as wild), so playing them honestly is safe and reduces my hand size without risking a challenge. Luke is observant, so an honest play here builds credibility for future bluffs and avoids giving him an easy challenge opportunity. With three cards remaining, I still have flexibility for later rounds.",
+                    "behavior": "I place two cards face down with a slight smirk and announce they are Aces, keeping my tone steady and unreadable.",
+                    "next_player": "Luke",
+                    "was_challenged": true,
+                    "challenge_reason": "Mike has a history of bluffing and already lied in Round 1. With three players having claimed Aces, the odds that Mike also holds two real Aces are low. His smirk and warning suggest a bluff, and challenging now could eliminate a strong opponent and earn me +2 points.",
+                    "challenge_result": false,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Luke",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 3,
+            "target_card": "Q",
+            "round_players": [
+                "Quinn",
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Lily",
+            "player_initial_states": [
+                {
+                    "player_name": "Quinn",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "A",
+                        "Joker",
+                        "Q",
+                        "Q",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "Q",
+                        "K",
+                        "Joker"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "Joker",
+                        "K",
+                        "Q",
+                        "Q",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "Q",
+                        "Joker",
+                        "A",
+                        "Q",
+                        "A"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a reckless bluffer—his Joker-backed “Aces” prove he’ll gamble with wild cards, not just fakes. Luke’s failed challenge may make Mike bolder, but also vengeful. I’ll keep suspecting his claims and avoid challenging unless I’m nearly certain.",
+                    "Luke": "Luke remains sharp and opportunistic, challenging Mike on plausible suspicion but now visibly rattled after surviving a live round. His public warnings about watching every hand suggest he'll escalate pressure, yet his secret alliance with Lily means his calls may be coordinated. I still avoid challenging him without strong evidence, but his failed challenge shows he can misjudge Joker wilds.",
+                    "Lily": "Lily remains cautious and reactive, avoiding challenges and letting others absorb risk. Her calm, quiet play and apparent coordination with Luke suggest she’s patient, preserving strength while others clash. She won’t act boldly unless pressured, making her predictable but dangerous if underestimated."
+                },
+                "Mike": {
+                    "Quinn": "Quinn remains cautious and measured, avoiding challenges again while quietly playing two Aces. Their steady gaze and calm demeanor suggest they’re still preserving strength, letting others clash. I now see Quinn as a patient opportunist—less passive than before, possibly waiting to strike when my guard drops.",
+                    "Luke": "Luke remains sharp and observant, but his failed challenge on my Joker shows he can be baited into overconfidence when tracking patterns. He’s still cautious yet willing to strike, and his survival luck makes him dangerous. I’ll need to bluff with more varied timing and avoid predictable Ace-heavy sequences around him.",
+                    "Lily": "Lily remains cautious and observant, avoiding early challenges and favoring self-preservation. Her comment about your Joker shows she tracks patterns closely and warns without acting rashly. She’s patient, low-risk, and likely to challenge only when evidence is strong, making her predictable but dangerous if underestimated."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains cautious, avoiding challenges again and quietly passing on Lily’s and Mike’s claims. Their modest, reactive style suggests they’re still prioritizing safety and waiting for stronger tells, though their recent comment about watching every hand hints at growing alertness.",
+                    "Mike": "Mike remains a bold, aggressive bluffer, but his use of a Joker as a wild Ace shows he’s cunning and prepared, not just reckless. His smug, warning tone suggests he’ll target me next, so I’ll challenge him only with stronger odds and watch for overconfidence.",
+                    "Lily": "Lily remains cautious and observant, avoiding challenges unless confident. Her comment about Mike’s Joker shows she tracks threats but prefers verbal pressure over risky calls, reinforcing her patient, low-risk style. She’s unlikely to bluff recklessly and will wait for clear opportunities before confronting anyone."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains cautious and passive, avoiding challenges despite suspicious plays. Their neutral comments suggest a survival-focused style, but they missed a clear bluff opportunity. Quinn seems unlikely to pressure others or capitalize on lies, making them predictable and low-risk to bluff against.",
+                    "Mike": "Mike remains a bold, aggressive bluffer, but his survival via Joker shows he’s also lucky and unshaken under fire. His warning to Luke reveals a vengeful streak, yet he overplays fake Aces predictably when pressured. Dangerous, but readable if I track his patterns and don’t let his calm smirk intimidate me.",
+                    "Luke": "Luke remains sharp and aggressive, challenging Mike on a hunch and nearly paying for it. His willingness to gamble on reads makes him dangerous to bluff against, but also predictable in his suspicion. He survives by luck as much as skill, yet his persistence and table awareness keep him a serious threat."
+                }
+            },
+            "player_scores": {
+                "Quinn": -1,
+                "Mike": 0,
+                "Luke": 1,
+                "Lily": 0
+            },
+            "play_history": [
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "Joker",
+                        "A",
+                        "A"
+                    ],
+                    "play_reason": "I hold two genuine Queens, so playing them honestly builds credibility and reduces challenge risk. Quinn is cautious and unlikely to challenge, allowing me to shed cards safely while keeping the Joker and Aces for later flexibility or bluffs.",
+                    "behavior": "I confidently place two cards face down and announce them as Queens.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily's claim of two Queens is plausible given my own hand contains two Queens and a Joker, leaving only four Queens unaccounted for among the other players. Challenging now risks a shot when I have a strong hand and can play honestly next, preserving my position and avoiding giving Luke and Lily an easy target.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Joker",
+                        "A"
+                    ],
+                    "play_reason": "I hold two genuine Queens, so playing them truthfully builds credibility and reduces the chance Mike challenges. It also keeps my Aces and Joker for later flexibility. Since Mike is reckless but may be wary after Luke's failed challenge, a truthful play here is low-risk and preserves strength.",
+                    "behavior": "I place two cards face down and calmly announce them as Queens, meeting Mike's gaze steadily.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn has been cautious and avoided challenges, suggesting they may be playing honestly to preserve strength. My hand contains two Queens and a Joker, making it plausible that Quinn holds Queens. Challenging now risks a shot and losing points, while passing lets me observe further and maintain my position.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "K",
+                        "Joker"
+                    ],
+                    "play_reason": "I have two real Queens, so playing them honestly is safe and builds credibility. Luke is cautious but has shown he can be baited; by playing truthfully now, I reduce the chance he challenges and set up a future bluff. My remaining hand (K, K, Joker) is strong for later rounds.",
+                    "behavior": "I place two cards face down and announce them as Queens, keeping my expression neutral.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike's claim of two Queens is plausible given the remaining deck composition, and challenging now risks a shot when I already have one point and a strong hand. I'll preserve my position and let the round continue, as Lily and I can pressure Mike later.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "Joker",
+                        "K",
+                        "A"
+                    ],
+                    "play_reason": "I actually hold two Queens, so playing them honestly keeps me safe from a challenge and preserves my Joker and King for later flexibility. Lily and I have agreed not to challenge each other, so this play maintains trust while reducing my hand to three cards.",
+                    "behavior": "I place two cards face down and announce them as Queens, keeping my tone even and meeting Lily's eyes briefly.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance and he told me he has two Queens, so his claim is likely true. Challenging him would break our trust and risk my survival, especially since he has already fired two shots and might be desperate.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Joker"
+                    ],
+                    "play_reason": "I already played two real Queens earlier, so playing two Aces as Queens now is a calculated bluff. Quinn is cautious and passive, unlikely to challenge after passing on previous suspicious plays. If Quinn doesn't challenge, I empty my hand and score +2 for successfully emptying without being challenged. If challenged, I lose a shot, but Quinn's pattern suggests they will fold. This preserves my Joker for a future round and keeps pressure on the table.",
+                    "behavior": "I place two cards face down and announce them as Queens, my expression calm and unreadable.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has been cautious and reactive, and her claim of two Queens is plausible given the target. Challenging risks losing a shot when I have a strong hand (A, Joker, A) to play next. I need to preserve my survival odds and avoid giving Lily and Luke an easy elimination.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "A"
+                    ],
+                    "play_reason": "I have no Queens, so I must bluff. Playing two cards keeps pressure on Mike and advances my hand toward emptying. Using the Joker as a Queen is plausible, and the A adds ambiguity. Mike is next and may be hesitant to challenge after Luke's failed challenge, especially since I've been calm and consistent.",
+                    "behavior": "I place two cards face down and announce them as Queens, keeping my voice steady and watching Mike closely.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn has been cautious and avoided challenges, and their claim of two Queens is plausible given the round's pattern. Challenging risks a shot and losing points if they are truthful, while passing preserves my position with a strong hand.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "Joker",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "K"
+                    ],
+                    "play_reason": "I have already played two actual Queens earlier, so playing a Joker as a Queen and a King as a bluff continues the pattern without depleting my real Queens. Luke is cautious but has shown he can be baited; by mixing a wild card and a bluff, I reduce the risk of him successfully challenging if he suspects a pattern. Also, keeping one King in hand gives me flexibility for the next turn if the round continues.",
+                    "behavior": "I place two cards face down and announce them as Queens, my expression calm but with a slight confident smile.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has played 2 Qs already this round, and I have no Qs left in hand—only Joker, K, A. The table has seen many Q claims, but Mike's calm confidence and the fact that he still has 1 card left suggests he might be holding a real Q or Joker. Challenging now risks a -1 if he's truthful, and my alliance with Lily is to pressure Quinn next. Better to pass and let the round continue, preserving my shot odds.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "Joker",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "A"
+                    ],
+                    "play_reason": "I want to dump non-Queen cards while keeping one Queen in hand for flexibility. Lily is unlikely to challenge me due to our alliance, and the table has been passive. This preserves my strength for later rounds.",
+                    "behavior": "I place two cards face down and announce them as Queens, my expression steady and unreadable.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he promised to play Q without challenging me. His remaining card count fits a truthful claim, and challenging now risks breaking our alliance and losing a potential ally. I'll preserve trust and challenge Mike instead when the opportunity arises.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Joker"
+                    ],
+                    "remaining_cards": [],
+                    "play_reason": "Playing the Joker as a Queen is safe since it's a wild card and cannot be challenged as a bluff. Keeping it for last would risk being forced to play it when hand-emptying rules trigger, so playing it now while I have cover is optimal. This empties my hand and, if unchallenged, earns +2 points for emptying without challenge.",
+                    "behavior": "I place one card face down, announcing it as a Queen with a small, confident nod.",
+                    "next_player": "Quinn",
+                    "was_challenged": true,
+                    "challenge_reason": "Lily has already played 4 cards this round claiming Queens, and with only 8 Queens in the deck total, her claim of another Queen after I hold one Queen in hand and have seen multiple Queen claims is statistically unlikely. Her calm confidence is suspicious given the card count.",
+                    "challenge_result": false,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Quinn",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 4,
+            "target_card": "A",
+            "round_players": [
+                "Quinn",
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Mike",
+            "player_initial_states": [
+                {
+                    "player_name": "Quinn",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "A",
+                        "Joker",
+                        "Q",
+                        "A",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "Q",
+                        "K",
+                        "A",
+                        "Joker",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "Joker",
+                        "A",
+                        "K",
+                        "Q",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "A",
+                        "Joker",
+                        "A"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer who mixes Jokers into false claims and stays composed under pressure. He avoided challenging when uncertain, showing restraint, but his confident smile suggests he reads table fear well. Expect him to exploit passive players and retaliate if challenged; only call him with near-certain evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding challenges unless certain, as seen when he let Mike's and Lily's claims pass. His failed challenge earlier shows he can misread Joker wilds, but his public warning suggests he'll track Queen counts closely. I still avoid challenging him without strong evidence, since his alliance makes him unpredictable.",
+                    "Lily": "Lily remains cautious but is more brazen than I thought—she bluffed with a Joker on her final card, counting on my hesitation. Her calm confidence and public \"alliance\" talk show she's coordinating closely with Luke and will exploit trust. She's patient but willing to gamble when cornered, making her a dangerous late-round threat."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is more aggressive than I thought—challenging Lily's bluff despite earlier caution shows they'll strike when odds look favorable, even if the call fails. Their calm recovery and pointed comment about \"bending the truth\" suggest a calculating player who learns fast and won't be passive twice.",
+                    "Luke": "Luke remains sharp and observant, but his reluctance to challenge Lily’s final Queen claim shows he’s now more cautious after being baited before. He tracks patterns well and avoids risky calls, making him harder to bluff but slower to punish lies. I’ll need to vary my timing and keep my Queen claims believable.",
+                    "Lily": "Lily remains cautious but showed sharper cunning this round, bluffing with a Joker and nearly emptying her hand before Quinn's challenge. Her calm, confident demeanor and post-round talk of a \"solid alliance\" suggest she's now playing more aggressively and politically, making her less predictable and more dangerous."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains cautious but is now more willing to challenge when the Queen count feels off, as shown by calling Lily’s bluff. Though the challenge failed, Quinn survived and stayed composed, signaling sharper threat assessment and growing confidence. Expect Quinn to challenge selectively but firmly next round.",
+                    "Mike": "Mike remains a bold, calculating bluffer who mixes truth and lies to bait challenges. His calm, confident smile and neutral claims this round show he’s disciplined, not just reckless. He’s watching me closely, likely targeting me next, so I’ll only challenge him with strong evidence.",
+                    "Lily": "Lily remains cautious but showed more willingness to bluff under pressure, playing a Joker as her final Queen. She avoids risky challenges unless confident, yet her calm demeanor and alliance talk suggest she’s adapting, mixing patience with selective deception."
+                },
+                "Lily": {
+                    "Quinn": "Quinn has shifted from cautious and passive to a sharper, more aggressive challenger. They correctly called my bluff and survived, showing they track card counts and aren't afraid to act on suspicion. Their private warning about Luke may be manipulation, so I'll treat Quinn as a calculating, moderately risky opponent.",
+                    "Mike": "Mike remains a bold, aggressive bluffer, but his calm double-Queen claims and confident smile show growing discipline. He avoids challenges wisely, letting others burn credibility, and his public warnings suggest he’s tracking patterns carefully. Still readable under pressure, but more dangerous now because he’s blending luck with patience.",
+                    "Luke": "Luke remains a sharp, aggressive challenger, but his restraint in Round 3 shows growth—he didn't bite on my obvious bluff bait and avoided unnecessary risk. His public callouts suggest he's tracking Queen counts carefully, making him harder to fool, yet his suspicion may still be exploitable with disciplined honesty."
+                }
+            },
+            "player_scores": {
+                "Quinn": -1,
+                "Mike": 2,
+                "Luke": 3,
+                "Lily": 2
+            },
+            "play_history": [
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "K",
+                        "A"
+                    ],
+                    "play_reason": "I hold two real Aces and a Joker, so playing two cards as Aces is truthful and safe. This builds credibility early in the round, making Luke less likely to challenge me later when I may need to bluff. It also keeps my hand strong with a Queen, King, and Ace remaining.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike's claim of two Aces is plausible given that I hold two Aces and a Joker, leaving only five Aces unaccounted for among the other players. His disciplined behavior and the fact that he told the truth in a previous round when challenged make me lean toward giving him the benefit of the doubt this time. Challenging now risks losing a point and a shot if he is truthful, and I want to preserve my position for a more certain opportunity.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Joker",
+                        "K",
+                        "Q"
+                    ],
+                    "play_reason": "I have two genuine Aces, so playing them honestly keeps me safe from a challenge. Lily is next and we have an alliance; she likely won't challenge if she believes me. This also preserves my Joker and other cards for later flexibility. Mike already played two Aces, so the Ace count is getting high, but with two real Aces I'm confident.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he explicitly told me he is playing A this round with no challenge from him. I have two Aces and a Joker in my hand, so his claim of two Aces is plausible. Challenging him would break our alliance and risk a shot, and I want to preserve my survival and points. I'll let it slide and watch for Quinn's or Mike's next move.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q",
+                        "A"
+                    ],
+                    "play_reason": "I have two real Aces (A + Joker as wild), so I can play honestly and safely. Quinn is next and may challenge, but since I am telling the truth, a challenge would hurt Quinn. This also preserves my K and Q for later flexibility, and keeps my hand size manageable. Luke and I agreed not to challenge each other, so I am not worried about him this turn.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Challenging Lily here is risky: she has only fired once, while I've already fired twice, so a failed challenge could be fatal for me. Her claim of two Aces is plausible because I hold two Aces and a Joker myself, which means there are only five other Aces unaccounted for among three players. Given her cautious style and the fact that Luke and Lily are coordinating, she may be telling the truth or at least holding a Joker as backup. I should preserve my survival odds and avoid giving her alliance an easy elimination.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "A",
+                        "K"
+                    ],
+                    "play_reason": "I have two Aces including a Joker, so this play is truthful and safe. Playing two cards reduces my hand to three and puts pressure on Mike, who is next. Since Mike has shown restraint when uncertain, he is unlikely to challenge a truthful play from me, especially after three consecutive unchallenged rounds. This also keeps my remaining cards flexible for later.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "The table has seen a chain of unopposed Ace claims, which could be a coordinated bluff, but Quinn's remaining three cards and the risk of a failed challenge (I already have two shots fired) make it too costly to call now. I'll preserve my position and gather more information before risking a shot.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "K"
+                    ],
+                    "play_reason": "Playing a single real Ace keeps my claim credible and avoids overcommitting. With Luke cautious after past challenges, a modest truthful play reduces the chance he challenges, preserving my hand strength and avoiding a risky bluff at this stage.",
+                    "behavior": "I place one card face down and announce it as an Ace.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has been disciplined and his one-card Ace claim is statistically plausible. Challenging risks a -1 penalty if he's truthful, and my alliance with Lily suggests we should avoid unnecessary challenges and target Quinn's bluffs instead.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "K",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "Joker"
+                    ],
+                    "play_reason": "I have no Aces, so this is a bluff. Playing K and Q empties my hand if unchallenged, which would earn me +2 points for emptying without challenge. Lily is my ally and likely won't challenge, especially since I've signaled my real hand. If she does challenge, I lose a shot but the odds are in my favor since only 1 of 3 chambers is loaded. This also keeps pressure on Quinn and Mike.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke is my secret ally and privately told me his real hand is Joker, K, Q, meaning his A claim is a bluff. However, challenging him would break our alliance, cost me future cooperation, and risk a shot if the system or later reveal favors him. Since Quinn and Mike are still in the round and likely to be challenged later, I preserve my position and let Luke's bluff pass for now.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q"
+                    ],
+                    "play_reason": "I only have one Ace left, so playing it honestly reduces risk of being caught in a bluff. Since Quinn has been aggressive and may challenge, playing a single true Ace is safest. I keep K and Q to preserve flexibility for later.",
+                    "behavior": "I place one card face down and announce it as an Ace.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has been cautious and is allied with Luke, so challenging her now risks a likely truthful claim and a shot. With two shots already fired and a negative score, I need to preserve survival and avoid giving them an easy elimination. I will wait for a stronger bluff tell or a better moment to challenge.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "K"
+                    ],
+                    "play_reason": "I hold one real Ace, so playing it honestly keeps me safe from a challenge. With Mike next and his history of bold play, giving him no reason to doubt me is best. I keep the Q and K as flexible bluff material for later.",
+                    "behavior": "I place one card face down and announce it as an Ace.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn has been cautious and only challenged once before, and their claim of one Ace is plausible given the remaining cards and the fact that I already hold two Aces in my hand. Challenging now risks a shot with 2/3 chance of being live, and my score is currently neutral, so I prefer to preserve survival odds.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "K"
+                    ],
+                    "play_reason": "I have no Aces left, so any Ace claim is a bluff. Playing one card keeps my remaining hand size at one, which pressures Luke since he has only one card left and must play it next turn. If he plays and I survive, the round may end with the system forcing my last card, but I want to avoid a challenge here because Luke is cautious and may not call. This also preserves my King as a potential future bluff or honest play if the round continues.",
+                    "behavior": "I place one card face down and announce it as an Ace.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has only 1 card left and claims it as an Ace. Although Aces are running thin, challenging now risks a 1-in-3 shot if he's truthful. My alliance with Lily planned to back her challenge if Mike played, but she has already passed her turn. With my Joker remaining, I can still play it as an Ace next turn and avoid unnecessary risk. Mike's disciplined play makes me uncertain, so I'll preserve my survival odds and keep pressure for later.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "Joker"
+                    ],
+                    "remaining_cards": [],
+                    "play_reason": "I have only the Joker left. Playing it as an Ace is safe because it's a wild card and counts as an Ace. This empties my hand and gives me a chance to score +2 if no one challenges. Lily is next and we have an alliance, so she likely won't challenge me. Even if she does, the Joker is a valid Ace, so I would win the challenge.",
+                    "behavior": "I place one card face down and announce it as an Ace.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance and he explicitly told me his A was a bluff but asked me not to challenge him. He also agreed to back my challenge on Mike. Challenging him now would break our alliance, cost me a potential ally, and risk a -1 or worse if the system or others turn on me. With his hand empty, he cannot play further this round anyway, so there is no immediate threat from letting it pass.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "K",
+                        "Q"
+                    ],
+                    "remaining_cards": [],
+                    "play_reason": "I have no Aces left. Quinn is the next player and has been increasingly aggressive, so if I play one card and Quinn challenges, I lose a shot. By playing both remaining cards, I empty my hand. If Quinn does not challenge, I survive the round and gain +2 points for emptying my hand. If Quinn challenges, I am caught bluffing, but Quinn must then shoot; with Quinn having already fired twice, there is a 1/3 chance the bullet is in the next chamber. This is a calculated risk to preserve my survival and points.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has emptied her hand, so if I challenge and she told the truth, I lose a point and take a shot with 2/3 survival odds. Given the public record shows she told the truth under challenge before and the table has been passive, the risk outweighs the reward. I preserve my position and avoid giving Luke, the current leader, an easier path.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "Q",
+                        "K"
+                    ],
+                    "remaining_cards": [],
+                    "play_reason": "I have no Aces left, but the table has been extremely passive, with no challenges in this round despite many claimed Aces. Mike is next and has shown restraint when uncertain. By playing my last two cards as Aces, I empty my hand. If Mike does not challenge, I score +2 for emptying my hand without being challenged and avoid any risk. Even if he challenges, I lose the challenge but only take a shot; given my revolver has fired twice already, the risk is acceptable. Bluffing here maximizes my expected points and survival.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Mike",
+                    "was_challenged": true,
+                    "challenge_reason": "All other players have emptied their hands, so this is the last chance to challenge. Quinn has already fired twice, meaning there are only 3 total shots possible before reload, and Quinn's claim of 2 Aces is suspicious given that many Aces have already been played or claimed. The risk of letting it pass is that Quinn survives and I lose a chance to eliminate a competitor, while challenging has a reasonable chance of success and could eliminate Quinn.",
+                    "challenge_result": true,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Quinn",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 5,
+            "target_card": "K",
+            "round_players": [
+                "Quinn",
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Mike",
+            "player_initial_states": [
+                {
+                    "player_name": "Quinn",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "Q",
+                        "Joker",
+                        "Q",
+                        "K",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "A",
+                        "Joker",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "Q",
+                        "A",
+                        "Joker",
+                        "K",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "Joker",
+                        "Q",
+                        "K",
+                        "K",
+                        "Q"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke remains cautious, avoiding risky challenges on Lily and Quinn despite suspicious Ace runs. He tracks patterns but now prioritizes survival over punishing lies, making him predictable yet hard to bluff. I should exploit his passivity by bluffing more boldly early, but avoid giving him clear tells when I hold real Aces.",
+                    "Lily": "Lily remains cautious but now blends cunning with political framing, bluffing smoothly and echoing table-talk to build alliances. Her calm, adaptive style and willingness to pressure without overcommitting make her a subtle, dangerous opponent who watches hands closely and avoids reckless challenges."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a disciplined, calculating bluffer who mixes truth with lies, but this round showed he can be baited into challenging on a hunch—and he learns fast. His public self-correction suggests he'll adapt, trust the table more, and likely target me next with sharper reads.",
+                    "Lily": "Lily remains cautious but is increasingly comfortable bluffing under pressure, as seen when she emptied her hand with a risky two-card Ace claim. She avoids unnecessary challenges and reads the table well, mixing patience with selective deception. Her calm, alliance-oriented talk suggests she’s adapting strategically, making her a dangerous late-round opponent."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike remains a bold, aggressive bluffer but now shows sharper discipline—he challenged Quinn on a sound read, and though the click missed, his calm recovery and public self-correction reveal a player who learns fast, tracks patterns, and won't tilt. Still readable, but more dangerous because he's blending patience with pressure.",
+                    "Luke": "Luke remains sharp and disciplined, but his repeated passivity on my obvious bluffs shows he's now over-trusting the table rather than reading hands. He's less likely to challenge me, making him exploitable with continued honest plays and selective pressure."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 5,
+                "Luke": 4,
+                "Lily": 3
+            },
+            "play_history": [
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "A",
+                        "Joker"
+                    ],
+                    "play_reason": "I hold two real Kings, so this is an honest opening that builds credibility. Luke is cautious and may hesitate to challenge a truthful play, especially after seeing me catch Quinn's lie last round. Keeping the Joker and Ace in hand gives me flexibility for later bluffs or a strong follow-up.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike's claim of 2 Kings is plausible given 8 Kings in the deck and his disciplined style. I hold 2 Kings myself, so there are 6 Kings unaccounted for among 23 unseen cards. The probability he has at least 2 Kings is high enough that challenging is risky. I also want to preserve my strong hand (Q, A, Joker, K, K) and avoid an early shot with 2 already fired. Better to let him play and gather more info.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "A",
+                        "Joker"
+                    ],
+                    "play_reason": "I hold two real Kings, so playing them honestly is safe and keeps my hand strong. Lily is next and we have an alliance; she will not challenge me. This also maintains my credibility for later bluffs.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he privately told me he's playing real Kings. Challenging him would break our trust and likely cost me a point if he's truthful. I also have strong King cards myself, so his claim is plausible, and I want to keep the pressure on Quinn and Mike instead.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "Joker",
+                        "Q",
+                        "Q"
+                    ],
+                    "play_reason": "I am holding two real Kings, so playing them truthfully builds credibility and avoids giving Quinn an easy successful challenge. Quinn is next and is sharp; a truthful play protects me from losing a shot and keeps my hand strong for later. My alliance with Luke also suggests we avoid challenging each other and pressure Quinn instead.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily is cautious and coordinated with Luke, and she has only fired once. Challenging her risks losing a shot and points, while my hand already contains two Kings and a Joker, so passing keeps me in the round with a strong chance to play truthfully or bluff later.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "Q",
+                        "Joker",
+                        "Q"
+                    ],
+                    "play_reason": "I have two real Kings, so playing them honestly is safe and keeps my story consistent. Since Mike is next and has been sharp, I want to avoid giving him an easy challenge. This also preserves my Joker and Queens for later flexibility.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Quinn has been consistent and calculated, and with three Kings already claimed by me, Luke, and Lily, challenging now risks a -1 penalty if truthful. My hand lacks Kings, but Quinn's composed pattern and the fact that a challenge would end the round make it safer to pass and reassess.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q"
+                    ],
+                    "play_reason": "Playing the Ace and Joker as Kings is a calculated bluff. Luke has shown a pattern of not challenging suspicious plays, prioritizing survival. With two shots already fired by both of us, he is unlikely to risk a challenge now. This play keeps my remaining Queen, which is less useful, and preserves my strength for later rounds. It also maintains the appearance of playing honestly, as I have a history of both truthful and deceptive plays.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has 1 card left and claimed 2 Kings, meaning he must have had exactly 2 Kings in his original 5-card hand. While possible, it's statistically unlikely given only 8 Kings exist and several have been played or claimed this round. However, challenging now risks a shot with 2 already fired (1/3 chance of live round), and if Mike is truthful I lose a point. My alliance with Lily is strong, and I can preserve my Joker for a safer play. Better to let it ride and observe Mike's next move.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "Q",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Joker"
+                    ],
+                    "play_reason": "I have no real Kings left. Playing Q and A as a bluff keeps my Joker in reserve. Lily is my ally and likely won't challenge, letting me reduce my hand safely while maintaining pressure.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he privately told me he played real Kings. Challenging him would break our trust and likely cost me a point if he's truthful. I'll preserve our alliance and keep pressure on Quinn and Mike instead.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Joker",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "Q"
+                    ],
+                    "play_reason": "I have two Queens and a Joker left. Playing the Joker as a King plus one Queen keeps a Queen in hand and preserves flexibility. Quinn is next and may challenge, but I've been truthful so far and my earlier plays were not challenged. This bluff is calculated: if Quinn challenges and I'm caught, I lose a shot but Quinn also risks losing if I happen to be truthful, and my alliance with Luke means he may back me if Quinn challenges. I need to shed cards to avoid the automatic system challenge when others are empty.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Quinn",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has played safely and consistently, and challenging now risks a failed challenge penalty if she is truthful. With my current score low and her alliance with Luke, it's better to preserve my position and avoid giving them an easy advantage.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Quinn",
+                    "played_cards": [
+                        "Joker",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "Q"
+                    ],
+                    "play_reason": "I need to shed cards without drawing a challenge. Playing the Joker as a King plus a Queen gives me two cards that can plausibly pass as Kings if challenged, and leaves me with one Queen for a safer final play. Mike has been cautious but opportunistic, and my previous truth-telling may buy me credibility here.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Mike",
+                    "was_challenged": true,
+                    "challenge_reason": "Quinn has already bluffed once this game and the table has seen many claimed Kings. With only one card left and a history of calculated risks, Quinn is likely bluffing to avoid emptying their hand safely. Challenging now could eliminate a strong competitor and improve my survival odds.",
+                    "challenge_result": true,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Quinn",
+                "bullet_hit": true
+            }
+        },
+        {
+            "round_id": 6,
+            "target_card": "A",
+            "round_players": [
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Mike",
+            "player_initial_states": [
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "A",
+                        "K",
+                        "Joker",
+                        "K",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "A",
+                        "K",
+                        "Q",
+                        "A",
+                        "Joker"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "A",
+                        "Joker",
+                        "A",
+                        "K",
+                        "Q"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke remains cautious but now shows sharper table awareness, openly endorsing your Quinn challenge and calling for a clean reset. He’s still passive under pressure, but his public support suggests he’s building alliances and tracking credibility, making him slightly less predictable and more dangerous if provoked.",
+                    "Lily": "Lily remains a cautious, adaptive operator, but her Round 5 echo of Luke’s “reset and play clean” line reveals sharper political instincts—she’s quick to align with the table’s mood and validate a successful challenger without exposing herself. She pressures quietly, bluffs smoothly, and avoids reckless calls, making her a subtle, dangerous long-game threat."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a sharp, adaptive bluffer who mixes truth and lies well, but this round exposed a reactive streak—he challenged Quinn on a hunch and got it right. He learns fast, publicly recalibrates, and will likely target me next with sharper reads.",
+                    "Lily": "Lily remains a cautious, adaptive player who avoids risky challenges and blends in with table consensus. This round she mirrored your \"play clean\" rhetoric while quietly bluffing two Kings herself, showing she’s comfortable lying when unchecked. She’s a patient, dangerous late-game opponent who exploits trust and rarely overextends."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike’s read on Quinn confirms he’s now blending aggression with disciplined pattern-tracking, and he’s willing to challenge when the King count feels inflated. He remains bold but less reckless, applying pressure selectively and learning from each round. I should treat his calm confidence as genuine and avoid bluffing him carelessly.",
+                    "Luke": "Luke remains disciplined but is now visibly over-passive, repeatedly letting suspicious King runs slide unchallenged. His post-round moralizing about \"playing clean\" suggests he's prioritizing table harmony over hand-reading, making him predictable and exploitable. I'll keep bluffing him selectively while watching for a delayed, frustrated challenge."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 5,
+                "Luke": 6,
+                "Lily": 3
+            },
+            "play_history": [
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Joker",
+                        "K"
+                    ],
+                    "play_reason": "I actually hold two Aces, so playing them truthfully is safe and builds credibility. With Luke cautious and likely to avoid challenging, this keeps the round moving and preserves my strong hand for later. It also pressures Luke and Lily to play honestly or risk suspicion.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Luke",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has shown he can mix truth and lies well, and challenging here risks a -1 if he's truthful. With my strong hand containing two Aces and a Joker, I can safely pass and preserve my position. I'll keep the alliance with Lily intact and wait for a better spot to catch a bluff.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q",
+                        "A"
+                    ],
+                    "play_reason": "I hold two real Aces (one A and the Joker as wild), so this is a truthful play that keeps me safe from a challenge. It also maintains my credibility with Lily and pressures Mike, who is due for a lie. Playing two cards preserves my K and Q for later flexibility.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke is my secret ally and we agreed not to challenge each other this round. His claim of 2 Aces is plausible given he said he holds A, A, K, Q, Joker, and challenging him risks our alliance and my survival. Mike is the bigger threat and likely due for a lie, so I'll save my challenge for him.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "K",
+                        "Q"
+                    ],
+                    "play_reason": "I hold two real Aces plus a Joker, so playing A + Joker as two Aces is truthful and safe. Mike has been selectively aggressive, but challenging a truthful play would cost him. This also keeps my remaining hand strong and preserves alliance trust with Luke.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has been cautious and rarely bluffs recklessly. With 3 cards left after claiming 2 Aces, she could easily have real Aces or a Joker. Challenging risks a -1 point if she told the truth, and I already lead the score. I'll preserve my position and let the round continue.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "K",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "K"
+                    ],
+                    "play_reason": "I want to preserve my last King for flexibility. The Joker can safely represent an Ace, and pairing it with a King risks a challenge only if Luke doubts me. Given Luke's cautious but sharper play, he may hesitate to challenge after I successfully challenged Quinn twice. If he does challenge, I lose a King but still have one King left. This keeps my hand strong for later while maintaining pressure.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Luke",
+                    "was_challenged": true,
+                    "challenge_reason": "Mike has now played or claimed 2 Aces twice in this round, and with only 1 card left he is likely bluffing to empty his hand. Given the alliance with Lily and our shared read that Mike is due for a lie, challenging maximizes our chance to catch him and potentially eliminate him.",
+                    "challenge_result": true,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Mike",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 7,
+            "target_card": "A",
+            "round_players": [
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Luke",
+            "player_initial_states": [
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "Joker",
+                        "A",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "A",
+                        "K",
+                        "Joker",
+                        "Q",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "Joker",
+                        "A",
+                        "A",
+                        "K",
+                        "K"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke is now more assertive, challenging my second bluff after tracking my patterns, showing sharper reads and willingness to act. His public calls for a reckoning signal growing confidence and table leadership. He remains cautious but is becoming a bigger threat, likely to challenge me again if I show weakness.",
+                    "Lily": "Lily remains cautious and politically sharp, but her Round 6 silence after Luke’s failed challenge and her pointed warning to you show she’s now tracking your bluffing patterns closely. She avoids risky calls but will weaponize table reads, making her a patient, observant threat who strikes only when your tells are exposed."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a sharp, adaptive bluffer, but this round exposed a reactive, luck-reliant streak: he bluffed twice as Aces and got caught, then survived by chance. He’ll likely recalibrate, targeting me with sharper reads next round.",
+                    "Lily": "Lily remains cautious and adaptive, but this round confirms she’s willing to bluff quietly when unchallenged. She mirrored your clean-play talk while likely holding fakes, then avoided confrontation. She’s patient, observant, and dangerous late-game, exploiting trust and rarely overextending unless forced."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike remains disciplined and pattern-aware, but his repeated “two Aces” claims show he’ll bluff when the count feels safe. Luke’s successful challenge proves Mike can be read under pressure. I should treat his calm confidence as genuine yet challengeable when his claims stack unnaturally, especially with Jokers involved.",
+                    "Luke": "Luke remains disciplined but now shows sharper hand-reading, correctly calling Mike's bluff when the math didn't add up. His post-round warnings suggest growing frustration with unchecked deception, making him less passive and more likely to challenge suspicious patterns—especially mine if I over-bluff. He's still exploitable, but riskier now."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 5,
+                "Luke": 5,
+                "Lily": 3
+            },
+            "play_history": [
+                {
+                    "player_name": "Luke",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q",
+                        "A"
+                    ],
+                    "play_reason": "I hold two real Aces and a Joker, so claiming two Aces is truthful and strong. Lily and I have a non-challenge pact, and Mike is likely to be challenged if he plays. Playing two cards preserves one real Ace for later flexibility.",
+                    "behavior": "I play two cards face down and declare them as Aces.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Luke and I have a secret alliance, and he privately told me he is playing 2 A with a real A plus Joker. My own hand has two real Aces, so it's plausible he holds another A and the Joker. Challenging him would break our alliance and likely fail, costing me a point and a shot. I'll stay steady and save my challenge for Mike, who is more likely to bluff.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "K",
+                        "K"
+                    ],
+                    "play_reason": "I hold two real Aces plus a Joker, so playing a real Ace with the Joker as an Ace is a strong, truthful claim that should survive a challenge. This keeps my remaining hand flexible with A, K, K for later and supports my alliance with Luke by not forcing a risky bluff.",
+                    "behavior": "I play two cards face down and declare them as Aces.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily is cautious and only strikes when confident, so her claim is likely truthful. Challenging risks a -1 point if she's honest, and I want to preserve my strong position with 5 points and avoid giving her an easy elimination chance.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q",
+                        "Joker"
+                    ],
+                    "play_reason": "I actually have two Aces, so this is a truthful play that builds credibility. With Luke already suspicious and likely to challenge if I bluff, playing real Aces reduces the risk of being caught and keeps pressure on the next players. It also preserves my Joker and other cards for later flexibility.",
+                    "behavior": "I play two cards face down and declare them as Aces.",
+                    "next_player": "Luke",
+                    "was_challenged": true,
+                    "challenge_reason": "Mike has a history of bluffing as Aces and was caught twice recently. His claim of two Aces after Lily and I both played Aces makes it statistically unlikely he holds two real Aces, and his 'playing straight this time' comment feels like a tell. With Lily backing me, I'll challenge to catch his bluff and gain points.",
+                    "challenge_result": false,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Luke",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 8,
+            "target_card": "Q",
+            "round_players": [
+                "Mike",
+                "Luke",
+                "Lily"
+            ],
+            "starting_player": "Lily",
+            "player_initial_states": [
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "A",
+                        "K",
+                        "Q",
+                        "Q",
+                        "Joker"
+                    ]
+                },
+                {
+                    "player_name": "Luke",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "K",
+                        "Joker",
+                        "Q"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "A",
+                        "Q",
+                        "A",
+                        "Q",
+                        "Joker"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke's read on me is now razor-sharp: he tracked my pattern, challenged my honest play, and still walks with confidence despite misfiring. He's become the table's assertive leader, unafraid to challenge me directly and likely to do so again if I show any weakness.",
+                    "Lily": "Lily remains cautious and observant, but her Round 7 pass on Luke and pointed warning to me reveal she’s now playing a longer psychological game—letting others burn bullets while she reads patterns. She’s patient, low-risk, and increasingly focused on my honesty tells."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a sharp, adaptive bluffer, but this round showed he can also play it straight under pressure and exploit my suspicion. He's now more dangerous: mixing honesty with bluffs, reading my challenges, and using table talk to bait me. I must vary my timing and not assume patterns.",
+                    "Lily": "Lily remains cautious and opportunistic, quietly bluffing when unchallenged while avoiding confrontation. She mirrors honest talk but exploits trust, staying patient and dangerous late-game. She rarely overextends unless forced, making her a strategic threat who capitalizes on others' mistakes."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike remains disciplined but now clearly willing to bluff twice in a row when Aces stack unnaturally; Luke’s failed challenge shows Mike can bait doubters by actually holding the cards. I’ll treat his calm “straight” claims as genuine only when the count fits, otherwise challenge.",
+                    "Luke": "Luke remains sharp and disciplined, correctly reading Mike's honest play this round despite suspicion, and his willingness to challenge shows he's now more assertive. He's less passive but still rational, so I must avoid over-bluffing against him; he'll punish obvious patterns while respecting calculated risks."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 6,
+                "Luke": 5,
+                "Lily": 4
+            },
+            "play_history": [
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "A",
+                        "Joker"
+                    ],
+                    "play_reason": "I hold two real Queens, so this is an honest play. It builds trust with Luke and pressures Mike, who is next. If Mike challenges, he risks shooting himself since I'm truthful. If he passes, I reduce my hand and keep the Joker for flexibility later. Luke and I have agreed not to challenge each other, so this play supports our alliance.",
+                    "behavior": "Playing 2 cards, claiming they are Queens.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has been cautious and rarely bluffs, and challenging now risks a bullet if she's truthful. My hand is strong for future rounds, so I'll preserve my position and avoid an early shot.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "Q",
+                        "Q",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "K"
+                    ],
+                    "play_reason": "I have two real Queens and a Joker, so this is a guaranteed honest play. Playing three cards puts pressure on Luke and reduces my hand to two cards, making it easier to empty next turn. If Luke challenges, he loses and faces the shot, which may eliminate him or at least advance the chamber. If he doesn't challenge, I'm close to emptying my hand and scoring.",
+                    "behavior": "Play 3 cards, claiming they are Queens.",
+                    "next_player": "Luke",
+                    "was_challenged": true,
+                    "challenge_reason": "Mike has a history of mixing bluffs and truths, and his claim of three Queens is suspicious given that I hold two Queens and Lily claimed two Queens with a Joker. The deck has only eight Queens total, so three more Queens from Mike plus Lily's claim would exceed the available Queens unless multiple Jokers were involved. Mike's earlier pattern of lying when under pressure and his recent statement about 'counting' suggests he might be bluffing to bait me into not challenging. Additionally, challenging now could eliminate a strong opponent and improve my survival odds.",
+                    "challenge_result": false,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Luke",
+                "bullet_hit": true
+            }
+        },
+        {
+            "round_id": 9,
+            "target_card": "K",
+            "round_players": [
+                "Mike",
+                "Lily"
+            ],
+            "starting_player": "Lily",
+            "player_initial_states": [
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "A",
+                        "Joker",
+                        "Q",
+                        "K",
+                        "K"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 1,
+                    "initial_hand": [
+                        "A",
+                        "Joker",
+                        "K",
+                        "Q",
+                        "K"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke's read on me is now razor-sharp: he tracked my pattern, challenged my honest play, and still walks with confidence despite misfiring. He's become the table's assertive leader, unafraid to challenge me directly and likely to do so again if I show any weakness.",
+                    "Lily": "Lily remains cautious but now sees me as her primary threat, using pointed comments to destabilize me while avoiding direct challenges. Her Round 8 claim of two Queens, followed by her survival as Luke died, suggests she's comfortable bluffing selectively and letting others take risks—she'll likely target my credibility next."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a sharp, adaptive bluffer, but this round showed he can also play it straight under pressure and exploit my suspicion. He's now more dangerous: mixing honesty with bluffs, reading my challenges, and using table talk to bait me. I must vary my timing and not assume patterns.",
+                    "Lily": "Lily remains cautious and opportunistic, quietly bluffing when unchallenged while avoiding confrontation. She mirrors honest talk but exploits trust, staying patient and dangerous late-game. She rarely overextends unless forced, making her a strategic threat who capitalizes on others' mistakes."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike’s mix of truth and bait is sharper now: he baited Luke by holding three Queens, then framed it as Luke’s error. He stays calm under pressure, exploits doubt, and counts chambers well. I’ll trust his claims only when card math fits, and challenge more aggressively when counts look impossible.",
+                    "Luke": "Luke remains sharp and disciplined, correctly reading Mike's honest play this round despite suspicion, and his willingness to challenge shows he's now more assertive. He's less passive but still rational, so I must avoid over-bluffing against him; he'll punish obvious patterns while respecting calculated risks."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 8,
+                "Luke": 5,
+                "Lily": 4
+            },
+            "play_history": [
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Joker",
+                        "Q"
+                    ],
+                    "play_reason": "I hold two real Kings, so this is an honest play. Mike has been sharp and may challenge if he suspects a bluff, but with real Kings I am safe if he does. Playing honestly here also builds credibility for later rounds and preserves my Joker and other cards for future flexibility.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has only fired once and likely plays cautiously. With two Kings in my hand, the odds she holds at least one King to make her claim plausible are decent, and challenging risks losing a point and a shot if she's truthful. I'll preserve my position and gather more information.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "K",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Joker",
+                        "Q"
+                    ],
+                    "play_reason": "I hold two real Kings, so playing them truthfully is safe and maintains my credibility. Lily is cautious and unlikely to challenge a truthful play, especially since I have a strong record of telling the truth in recent rounds. This also keeps pressure on her by forcing her to respond.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has been mostly truthful when card math fits, and my remaining hand has only one King (the Joker can count as one), so challenging now risks a -1 if he's honest. With the chamber state uncertain and Mike calm under pressure, I'll preserve my position and let him continue, watching for an impossible count later.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "Q"
+                    ],
+                    "play_reason": "I hold no Kings, so this is a bluff. Mike already declined to challenge my first two Kings, so he may be reluctant to challenge again. I need to shed cards, and this keeps pressure on him while preserving my Queen for flexibility.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has only 1 card left and claimed 2 Kings, meaning she would have played her entire remaining hand except one card. Given the target is Kings and there are 8 Kings plus Jokers in the deck, it's plausible she had two Kings or a King and Joker. Challenging now risks losing a shot and giving her an advantage, especially since I have a strong hand and can afford to let this slide. Her cautious playstyle suggests she might be telling the truth to avoid elimination, and challenging could backfire if she's honest.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "Joker",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "A"
+                    ],
+                    "play_reason": "I have one card left after this play. Lily has one card remaining and will likely play it next. By playing two cards now, I empty my hand if she doesn't challenge, but if she does challenge, I'm bluffing with Joker and Q against Kings. However, Lily has been cautious and may not challenge given my strong record this game. If she doesn't challenge, I win the round by emptying my hand, gaining +2 points. If she does challenge, I lose the challenge and take a shot, but the chamber has 1 live round in 3, and she has already fired once, so the odds may be in my favor. This is a calculated risk to secure points and potentially end the round favorably.",
+                    "behavior": "I place two cards face down and announce them as Kings.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has played two Kings twice this round, and I already played two Kings myself. That's six Kings claimed in total, but only eight exist. With Jokers wild, it's possible he holds two real Kings plus a Joker, but the math is tight. However, Mike has been mostly truthful in recent rounds and baited Luke successfully. If I challenge and he's truthful, I lose a point and take a shot with a 1-in-3 live round. If I don't challenge, I can still play my last card next turn and potentially empty my hand for +2 points. Given my current score and the risk, passing is safer.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Q"
+                    ],
+                    "remaining_cards": [],
+                    "play_reason": "I have only one card left, the Queen, which cannot be truthfully played as a King. Since Mike chose not to challenge my previous bluffs, I will bluff once more by claiming this Queen as a King. If Mike does not challenge, I empty my hand and gain +2 points. If he challenges, I lose the round and must shoot, but the chamber has only been fired once (1/3 chance of live round), so survival is likely. This aggressive play maximizes my chance to score and end the round favorably.",
+                    "behavior": "I place one card face down and announce it as a King.",
+                    "next_player": "Mike",
+                    "was_challenged": true,
+                    "challenge_reason": "Lily has now claimed five Kings across three plays, which is statistically unlikely given only eight Kings exist and I hold none. Her earlier hesitation and pointed comments suggest she is bluffing to force a challenge, but the math favors her lying here, and challenging successfully would eliminate her and boost my score.",
+                    "challenge_result": true,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Lily",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 10,
+            "target_card": "A",
+            "round_players": [
+                "Mike",
+                "Lily"
+            ],
+            "starting_player": "Mike",
+            "player_initial_states": [
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "Joker",
+                        "Q",
+                        "K",
+                        "A",
+                        "A"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 2,
+                    "initial_hand": [
+                        "K",
+                        "A",
+                        "A",
+                        "Joker",
+                        "Q"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke's read on me is now razor-sharp: he tracked my pattern, challenged my honest play, and still walks with confidence despite misfiring. He's become the table's assertive leader, unafraid to challenge me directly and likely to do so again if I show any weakness.",
+                    "Lily": "Lily is a cautious, adaptive bluffer who avoids direct confrontation and lets opponents self-destruct. In Round 9 she mirrored my King claims, tested my patience, and only folded when caught, showing she calculates risk carefully. She now sees me as her main rival and will likely target my credibility with selective lies next."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a sharp, adaptive bluffer, but this round showed he can also play it straight under pressure and exploit my suspicion. He's now more dangerous: mixing honesty with bluffs, reading my challenges, and using table talk to bait me. I must vary my timing and not assume patterns.",
+                    "Lily": "Lily remains cautious and opportunistic, quietly bluffing when unchallenged while avoiding confrontation. She mirrors honest talk but exploits trust, staying patient and dangerous late-game. She rarely overextends unless forced, making her a strategic threat who capitalizes on others' mistakes."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike remains a disciplined, math-driven bluffer who rarely overextends; he let my impossible five-Kings claim slide twice, preserving his chamber odds, then challenged only when my last King was statistically doomed. He counts cards and chambers coldly, using silence as pressure. I must tighten my bluffs against him and challenge only with near-certain count proof.",
+                    "Luke": "Luke remains sharp and disciplined, correctly reading Mike's honest play this round despite suspicion, and his willingness to challenge shows he's now more assertive. He's less passive but still rational, so I must avoid over-bluffing against him; he'll punish obvious patterns while respecting calculated risks."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 8,
+                "Luke": 5,
+                "Lily": 3
+            },
+            "play_history": [
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "A"
+                    ],
+                    "remaining_cards": [
+                        "Joker",
+                        "Q",
+                        "K"
+                    ],
+                    "play_reason": "I actually hold two Aces, so this is a truthful opening. Lily has fired twice and may be wary of challenging after being caught last round. Playing honestly here builds credibility and pressures her to respond without risking an immediate successful challenge against me.",
+                    "behavior": "I place two cards face down and announce them as Aces.",
+                    "next_player": "Lily",
+                    "was_challenged": true,
+                    "challenge_reason": "Mike claimed 2 Aces, but I hold two Aces and a Joker myself. With only 8 Aces total and Luke eliminated, the odds that Mike also has two real Aces are extremely low. Mike is a disciplined bluffer who likely knows I have Aces and is trying to pressure me. This is a high-probability bluff worth challenging.",
+                    "challenge_result": false,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Lily",
+                "bullet_hit": false
+            }
+        },
+        {
+            "round_id": 11,
+            "target_card": "Q",
+            "round_players": [
+                "Mike",
+                "Lily"
+            ],
+            "starting_player": "Mike",
+            "player_initial_states": [
+                {
+                    "player_name": "Mike",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "A",
+                        "Joker",
+                        "K",
+                        "Q",
+                        "Q"
+                    ]
+                },
+                {
+                    "player_name": "Lily",
+                    "bullet_position": 0,
+                    "current_gun_position": 0,
+                    "initial_hand": [
+                        "K",
+                        "Q",
+                        "Joker",
+                        "Q",
+                        "K"
+                    ]
+                }
+            ],
+            "player_opinions": {
+                "Quinn": {
+                    "Mike": "Mike remains a bold, opportunistic bluffer, but this round exposed a sharper read: he challenged when my story didn't match the table, even after surviving earlier lies. He's now watching hands more than words, less likely to be baited by talk, and more dangerous when he has pattern evidence.",
+                    "Luke": "Luke remains cautious and coordinated with Lily, avoiding risky challenges and letting claims pass to preserve his alliance's position. His failed challenge earlier shows he can misread wilds, but he now publicly emphasizes tracking the table over talk, making him more disciplined and harder to bluff without strong evidence.",
+                    "Lily": "Lily remains a disciplined, coordinated bluffer who leverages her alliance with Luke and public trust to avoid challenges. This round she played safely, letting Mike absorb the risk while preserving her hand and image. She’s cautious but opportunistic, and she’ll exploit any perceived weakness without revealing her true coordination."
+                },
+                "Mike": {
+                    "Quinn": "Quinn is a calculating risk-taker who reads opponents well and stays composed under pressure. Their willingness to challenge and ability to survive a shot shows resilience, while their pointed comments reveal a strategic, psychologically aware player who adapts quickly and won't hesitate to exploit perceived weakness.",
+                    "Luke": "Luke's read on me is now razor-sharp: he tracked my pattern, challenged my honest play, and still walks with confidence despite misfiring. He's become the table's assertive leader, unafraid to challenge me directly and likely to do so again if I show any weakness.",
+                    "Lily": "Lily remains a cautious, calculating bluffer who now closely tracks my claims and challenges when the math feels off, as seen with her failed Ace challenge. She’s less passive than before, more willing to directly test my credibility, but still avoids reckless risks and will likely mix selective truths with bluffs to unsettle me next."
+                },
+                "Luke": {
+                    "Quinn": "Quinn remains a sharp, selective challenger, now more confident after surviving a risky call. He reads patterns well and isn’t afraid to bluff or pressure when hand counts drop, but Mike exposed his late-round bluff, so he may tighten up or bait harder next round.",
+                    "Mike": "Mike remains a sharp, adaptive bluffer, but this round showed he can also play it straight under pressure and exploit my suspicion. He's now more dangerous: mixing honesty with bluffs, reading my challenges, and using table talk to bait me. I must vary my timing and not assume patterns.",
+                    "Lily": "Lily remains cautious and opportunistic, quietly bluffing when unchallenged while avoiding confrontation. She mirrors honest talk but exploits trust, staying patient and dangerous late-game. She rarely overextends unless forced, making her a strategic threat who capitalizes on others' mistakes."
+                },
+                "Lily": {
+                    "Quinn": "Quinn remains a sharp, calculating opponent who tracks card counts and challenges when evidence mounts, as seen with Mike. Their private warnings about Luke feel like manipulation, but their public calm after surviving shows resilience. I'll keep treating Quinn as risky but rational, watching for more bluffs.",
+                    "Mike": "Mike remains a cold, count-driven bluffer who now exploits my failed challenge to tighten psychological pressure. He truthfully showed Aces, baiting me into a costly mistake, then framed it as the deck watching. I must only challenge him with near-certain proof and avoid emotional reactions.",
+                    "Luke": "Luke remains sharp and disciplined, correctly reading Mike's honest play this round despite suspicion, and his willingness to challenge shows he's now more assertive. He's less passive but still rational, so I must avoid over-bluffing against him; he'll punish obvious patterns while respecting calculated risks."
+                }
+            },
+            "player_scores": {
+                "Quinn": -3,
+                "Mike": 14,
+                "Luke": 5,
+                "Lily": 1
+            },
+            "play_history": [
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "Q",
+                        "Q"
+                    ],
+                    "remaining_cards": [
+                        "A",
+                        "Joker",
+                        "K"
+                    ],
+                    "play_reason": "I hold two genuine Queens, so playing them truthfully builds credibility and reduces the chance Lily challenges. It also keeps my Joker and Ace in hand for future flexibility. Lily is cautious and tracks my claims; showing a clean truth here may make her more likely to doubt a later bluff, but it also avoids an immediate risky challenge.",
+                    "behavior": "I place two cards face down and announce them as Queens.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has shown a pattern of telling the truth when I challenge him recently, and my hand has two Queens and a Joker, making it plausible he holds two real Queens. Challenging now risks another costly mistake and a shot, while I can preserve my strength and wait for stronger evidence.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Q",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "K",
+                        "Q",
+                        "K"
+                    ],
+                    "play_reason": "I hold two real Queens plus a Joker, so playing Q+Joker as two Queens is truthful and safe. With only Mike left, I want to keep my claim credible and avoid giving him a reason to challenge, while preserving my K, Q, K for later flexibility.",
+                    "behavior": "I place two cards face down and announce them as Queens.",
+                    "next_player": "Mike",
+                    "was_challenged": false,
+                    "challenge_reason": "Lily has been cautious and just passed on my truthful claim; challenging her now risks a -1 if she's telling the truth, and her remaining 3 cards could plausibly include Queens. Preserving my revolver position and points is safer than a speculative challenge.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Mike",
+                    "played_cards": [
+                        "A",
+                        "Joker"
+                    ],
+                    "remaining_cards": [
+                        "K"
+                    ],
+                    "play_reason": "I need to manage my hand carefully. Playing the A and Joker as Queens keeps my remaining K as a potential future play. Since Lily just passed on my previous two Queens, she may be inclined to pass again, allowing me to reduce my hand without immediate risk. This also preserves the K, which could be useful if the target changes or if I need a safe truth later.",
+                    "behavior": "I place two cards face down and announce them as Queens.",
+                    "next_player": "Lily",
+                    "was_challenged": false,
+                    "challenge_reason": "Mike has shown a pattern of telling the truth when he expects a challenge, and his earlier truthful Aces bait cost me a shot. With only one card remaining, he may be playing honestly to bait another failed challenge. Given my low survival risk and the need to preserve points, I avoid challenging without near-certain proof.",
+                    "challenge_result": null,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                },
+                {
+                    "player_name": "Lily",
+                    "played_cards": [
+                        "Q",
+                        "K"
+                    ],
+                    "remaining_cards": [
+                        "K"
+                    ],
+                    "play_reason": "I hold one real Queen and need to shed cards without inviting a challenge. Mike has already passed twice on my Queens, so continuing the same claim maintains consistency and pressures him to keep passing. Playing a King alongside the Queen reduces my remaining hand to a single King, setting up a quick empty if Mike does not challenge. I avoid using the Joker here because I may need it later as a wild card to survive a challenge or complete a truthful play.",
+                    "behavior": "I place two cards face down and announce them as Queens.",
+                    "next_player": "Mike",
+                    "was_challenged": true,
+                    "challenge_reason": "Lily has now claimed four Queens across two turns, but only 8 Queens exist and I hold none. With her remaining card and the deck composition, the odds she actually had two more Queens are low. Her earlier failed challenge suggests she may be pressing her luck, and this is a good spot to test her.",
+                    "challenge_result": true,
+                    "play_thinking": "",
+                    "challenge_thinking": ""
+                }
+            ],
+            "round_result": {
+                "shooter_name": "Lily",
+                "bullet_hit": true
+            }
+        }
+    ],
+    "winner": "Mike",
+    "final_scores": {
+        "Quinn": -3,
+        "Mike": 14,
+        "Luke": 5,
+        "Lily": 1
+    },
+    "communication_enabled": true,
+    "communication_history": [],
+    "communication_rounds": 1,
+    "public_statements": [
+        {
+            "round": 1,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two Kings to start us off."
+        },
+        {
+            "round": 1,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it pass this time."
+        },
+        {
+            "round": 1,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Three Kings for you, Luke. Good luck."
+        },
+        {
+            "round": 1,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Three Kings is bold, Mike. I'll let it slide for now."
+        },
+        {
+            "round": 1,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Three Kings for you, Lily. I'm feeling lucky."
+        },
+        {
+            "round": 1,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it pass this time, Luke. Three Kings is a lot, but I'm feeling generous."
+        },
+        {
+            "round": 1,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Three Kings for you, Quinn. Let's see if you're feeling lucky."
+        },
+        {
+            "round": 1,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "Three more Kings? That's a lot, but I'll let it slide for now."
+        },
+        {
+            "round": 1,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "One King this time, Mike. Your call."
+        },
+        {
+            "round": 1,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "One King seems reasonable. I'll let it pass."
+        },
+        {
+            "round": 1,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two more Kings for you, Luke. Let's see if you're feeling lucky."
+        },
+        {
+            "round": 1,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Five Kings from one hand? That's too many. I'm calling your bluff."
+        },
+        {
+            "round": 1,
+            "speaker": "Quinn",
+            "phase": "round_end",
+            "text": "Tough break, Mike. But hey, a survived shot means we all live to bluff another round."
+        },
+        {
+            "round": 1,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Lucky break for me. But let's be clear—I won't forget who called my bluff. Next round, I'll be watching every card you play, Luke."
+        },
+        {
+            "round": 1,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Nice try, Mike. Bluffing twice in one round was bold—but I'm watching patterns, not luck. Next time, I'll call it sooner."
+        },
+        {
+            "round": 1,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Luke called it right—Mike's bluff was bound to crack. Let's keep our heads and watch the table; the next round won't be so forgiving."
+        },
+        {
+            "round": 2,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Aces. Your move, Lily."
+        },
+        {
+            "round": 2,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it slide this time. Mike, your turn—let's see if you're feeling lucky."
+        },
+        {
+            "round": 2,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Aces. Quinn, your move—let's see if you're feeling bold."
+        },
+        {
+            "round": 2,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll pass. Mike, your turn—let's see if you're feeling lucky."
+        },
+        {
+            "round": 2,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two Aces. Mike, your call—but remember, not every claim is a bluff."
+        },
+        {
+            "round": 2,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it pass. But the table's getting heavy with Aces—someone's luck will run out."
+        },
+        {
+            "round": 2,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Aces. Luke, your move—but I'd think twice before calling this one."
+        },
+        {
+            "round": 2,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Too many Aces on the table, Mike. I don't believe you."
+        },
+        {
+            "round": 2,
+            "speaker": "Quinn",
+            "phase": "round_end",
+            "text": "Luke’s still breathing—luck’s on his side. But alliances don’t stop bullets, and I’m not here to make friends. Next round, I’m watching every hand."
+        },
+        {
+            "round": 2,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Luke’s luck is noted—but luck runs out. I’m still here, and I’m watching who blinks first."
+        },
+        {
+            "round": 2,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Too many Aces, Mike—but your Joker saved you. I'll be watching every hand now. Luck won't cover a bluff twice."
+        },
+        {
+            "round": 2,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Mike, your Joker saved you once—bluffs won't hold forever. I'm watching every hand now."
+        },
+        {
+            "round": 3,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Queens. Quinn, your move—but I'd rather keep this friendly."
+        },
+        {
+            "round": 3,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it pass this time, Lily. But I'm counting every Queen."
+        },
+        {
+            "round": 3,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two Queens, Mike. Your call—but remember, not every claim is a bluff."
+        },
+        {
+            "round": 3,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it slide, Quinn. But I'm counting too."
+        },
+        {
+            "round": 3,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Queens. Luke, your call—but I'm playing it straight this time."
+        },
+        {
+            "round": 3,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "I'll let it pass, Mike. But I'm counting Queens too."
+        },
+        {
+            "round": 3,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Queens. Lily, your turn—let's keep this round clean."
+        },
+        {
+            "round": 3,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it pass, Luke. But I'm counting Queens too."
+        },
+        {
+            "round": 3,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two more Queens. Quinn, your call—but I'm playing it straight."
+        },
+        {
+            "round": 3,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it slide, Lily. But I'm counting too."
+        },
+        {
+            "round": 3,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two more Queens, Mike. Your call."
+        },
+        {
+            "round": 3,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it pass, Quinn. But I'm counting Queens too."
+        },
+        {
+            "round": 3,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two more Queens. Luke, your call—but I'm playing it straight."
+        },
+        {
+            "round": 3,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "I'll let it pass, Mike. But I'm counting Queens too."
+        },
+        {
+            "round": 3,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two more Queens. Lily, your call—but I'm playing it straight."
+        },
+        {
+            "round": 3,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it pass, Luke. But I'm watching the Queens count too."
+        },
+        {
+            "round": 3,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "One Queen left. Quinn, your call — but I'm playing it straight."
+        },
+        {
+            "round": 3,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "Too many Queens, Lily. I'm calling it."
+        },
+        {
+            "round": 3,
+            "speaker": "Quinn",
+            "phase": "round_end",
+            "text": "Tough break — I misread that one. But the Queen count never added up, and I'm not the only one bending the truth here. Next round, I'll be watching every claim."
+        },
+        {
+            "round": 3,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Quinn, you called Lily's bluff and survived—bold move. But we all know the Queen count was fiction tonight. Next round, I'll be counting more carefully."
+        },
+        {
+            "round": 3,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Quinn, you called a bluff and survived—respect. But the Queen count was fiction from all sides. I'm counting every claim next round."
+        },
+        {
+            "round": 3,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Quinn, you called and survived—fair play. But the Queen count was fiction from all sides tonight. I'm counting every claim next round, and my alliance is solid."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Aces. Straight up. Your call, Luke."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "I'll let it slide this time, Mike. But I'm counting every Ace."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Aces. Straight up. Your call, Lily."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it slide this time, Luke. But I'm counting every Ace too."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Aces. Straight up. Your call, Quinn."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it pass. But I'm counting every Ace too."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two Aces. Your call, Mike."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it pass. But the next Ace claim better be backed by more than words."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "One Ace. Clean and simple. Your call, Luke."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "I'll let it pass. But I'm counting every Ace too."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two more Aces. Your call, Lily."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it pass. But I'm counting every Ace too."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "One Ace. Clean and simple. Your call, Quinn."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it pass. But I'm counting every Ace too."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "One Ace. Your call, Mike."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it slide. But the Aces are running thin."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "One Ace. The Aces are almost gone, Luke."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "I'll let it pass. But that last Ace better be real, Mike."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Last one. Ace. Your call, Lily."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it pass. But if that Ace was fake, Luke, you owe me one."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Aces. Your call, Quinn."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it pass. But the Aces are exhausted now."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Last two. Aces. Your call, Mike."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "Two more Aces? That's a stretch. I'm calling it."
+        },
+        {
+            "round": 4,
+            "speaker": "Quinn",
+            "phase": "round_end",
+            "text": "Mike finally catches a bluff, and his reward is an empty click. That's the whole game in one moment — read the table, not the story."
+        },
+        {
+            "round": 4,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Quinn's right — I read the story, not the table. Good call surviving. Next round, I'm watching hands, not words."
+        },
+        {
+            "round": 4,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Quinn read it right — Mike's challenge was sound, the click just didn't land. That's the game. Next round, I'm trusting the table, not the talk."
+        },
+        {
+            "round": 4,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Good call, Mike — Quinn's story didn't match the table. I'm still watching hands, not words. Next round, let's keep the pressure honest."
+        },
+        {
+            "round": 5,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Kings. Straight and simple, Luke."
+        },
+        {
+            "round": 5,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Two Kings? I'll let it ride. Show me what you've got next."
+        },
+        {
+            "round": 5,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Kings, straight and simple. Your turn, Lily."
+        },
+        {
+            "round": 5,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it ride, Luke. Quinn, your turn — let's see if you're as honest as you claim."
+        },
+        {
+            "round": 5,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Kings, straight and simple. Quinn, your turn — let's see if you're as honest as you claim."
+        },
+        {
+            "round": 5,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it ride, Lily. Let's see what Quinn can do."
+        },
+        {
+            "round": 5,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two Kings. Clean and simple, Mike. Your call."
+        },
+        {
+            "round": 5,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it ride, Quinn. Let's see how the next round plays out."
+        },
+        {
+            "round": 5,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Kings, Luke. Let's keep this moving."
+        },
+        {
+            "round": 5,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Let it ride, Mike. Show us what you've got."
+        },
+        {
+            "round": 5,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Kings, Lily. Your call."
+        },
+        {
+            "round": 5,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "Let it ride, Luke. Keep it moving."
+        },
+        {
+            "round": 5,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Kings. Quinn, your call."
+        },
+        {
+            "round": 5,
+            "speaker": "Quinn",
+            "phase": "challenge",
+            "text": "I'll let it ride. Show us what you've got, Lily."
+        },
+        {
+            "round": 5,
+            "speaker": "Quinn",
+            "phase": "play",
+            "text": "Two Kings, Mike. Your call."
+        },
+        {
+            "round": 5,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "Too many Kings, Quinn. I don't buy it."
+        },
+        {
+            "round": 5,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Nice try, Quinn. I had to call that one."
+        },
+        {
+            "round": 5,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Good call, Mike. Quinn was pushing too many Kings all round — someone had to check it. Let's reset and play clean."
+        },
+        {
+            "round": 5,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Good call, Mike. Quinn pushed too many Kings — someone had to check. Let's reset and play clean."
+        },
+        {
+            "round": 6,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Aces. Your move, Luke."
+        },
+        {
+            "round": 6,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "I'll let that slide, Mike. Your move, Lily."
+        },
+        {
+            "round": 6,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Aces. Your move, Lily."
+        },
+        {
+            "round": 6,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it slide, Luke. Your move, Mike."
+        },
+        {
+            "round": 6,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Aces. Your move, Mike."
+        },
+        {
+            "round": 6,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it pass. Your move, Luke."
+        },
+        {
+            "round": 6,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Aces. Your move, Luke."
+        },
+        {
+            "round": 6,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Two Aces twice, Mike? That's too many. I'm calling it."
+        },
+        {
+            "round": 6,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Nice call, Luke. Luck was on my side this time. Let's see if you're still feeling bold next round."
+        },
+        {
+            "round": 6,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Good call, Mike — you slipped through. Lily, I'm still watching. One of us is due for a real reckoning next round."
+        },
+        {
+            "round": 6,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Luke, good call. Mike, you're leaking tells — two \"Ace\" pairs and a Joker in hand? I'm watching you next round."
+        },
+        {
+            "round": 7,
+            "speaker": "Luke",
+            "phase": "play",
+            "text": "Two Aces. Your move, Lily."
+        },
+        {
+            "round": 7,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it pass. Mike, your turn — and I'm watching."
+        },
+        {
+            "round": 7,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Aces. Mike, your turn — and I'm still watching."
+        },
+        {
+            "round": 7,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it pass. But Lily, I'm watching you too."
+        },
+        {
+            "round": 7,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Aces. Luke, your call — but I'm playing straight this time."
+        },
+        {
+            "round": 7,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Two Aces from you after we both played Aces? I'm not buying it, Mike."
+        },
+        {
+            "round": 7,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Fair enough, Luke — you caught me honest and still walked away. But that chamber's one step closer. I'll take my chances with the odds."
+        },
+        {
+            "round": 7,
+            "speaker": "Luke",
+            "phase": "round_end",
+            "text": "Mike, you played it straight and I paid for doubting you. That's the game — chamber's moving on. Lily, good instincts staying out of it. Let's see who blinks first next round."
+        },
+        {
+            "round": 7,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Luke, you doubted Mike and paid for it — chamber's still spinning. Mike, you're honest once and now you're due. I'm watching both of you."
+        },
+        {
+            "round": 8,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Queens. Mike, your call — but I'm playing straight this time."
+        },
+        {
+            "round": 8,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let that slide, Lily. But the chamber's spinning, and I'm counting."
+        },
+        {
+            "round": 8,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Three Queens, Luke. All real this time — your move."
+        },
+        {
+            "round": 8,
+            "speaker": "Luke",
+            "phase": "challenge",
+            "text": "Three Queens when I hold two and Lily claimed two? That math doesn't add up, Mike. I'm calling it."
+        },
+        {
+            "round": 8,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Chamber's spinning, Luke — but you called it wrong. Lily, two Queens from you, three from me, and Luke still doubted. I'll take the odds."
+        },
+        {
+            "round": 8,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Mike, you got lucky once — but Luke's blood is on your hands now. I'm still standing, and I'm watching every card you touch."
+        },
+        {
+            "round": 9,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Kings, Mike. All real — your call."
+        },
+        {
+            "round": 9,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "I'll let it slide, Lily. But the chamber's spinning, and I'm watching."
+        },
+        {
+            "round": 9,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Kings, Lily. All real — your call."
+        },
+        {
+            "round": 9,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it slide, Mike. But the chamber's spinning, and I'm counting every King."
+        },
+        {
+            "round": 9,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two more Kings, Mike. All real — your call."
+        },
+        {
+            "round": 9,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "One card left, Lily. I'll let you keep it."
+        },
+        {
+            "round": 9,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Last two, Lily. Your move."
+        },
+        {
+            "round": 9,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "I'll let it slide, Mike. But that's a lot of Kings."
+        },
+        {
+            "round": 9,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "One last King, Mike. Your call."
+        },
+        {
+            "round": 9,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "Five Kings, Lily? The deck doesn't lie, but you do."
+        },
+        {
+            "round": 9,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Five Kings between us, Lily — bold. The deck remembers. Next round, I won't let it slide."
+        },
+        {
+            "round": 9,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Mike, you caught me — fair play. That's the game. Next round, I'll be watching every King you touch."
+        },
+        {
+            "round": 10,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Aces, Lily. Your turn — but remember, the deck remembers."
+        },
+        {
+            "round": 10,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "Two more Aces, Mike? I'm holding two myself. That math doesn't add up."
+        },
+        {
+            "round": 10,
+            "speaker": "Mike",
+            "phase": "round_end",
+            "text": "Lily, that shot was a blank — the deck's still watching. I told the truth and you paid for doubting it. Next round, I'll be holding the cards that matter."
+        },
+        {
+            "round": 10,
+            "speaker": "Lily",
+            "phase": "round_end",
+            "text": "Mike, you told the truth — I paid for doubting it. That's two clean Aces you've shown me now. I'll be watching your next claim very carefully."
+        },
+        {
+            "round": 11,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two Queens, Lily. Clean and simple — your move."
+        },
+        {
+            "round": 11,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "Two Queens, Mike? I'll let it pass — but I'm counting every card you touch."
+        },
+        {
+            "round": 11,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Queens, Mike. Clean and simple — your move."
+        },
+        {
+            "round": 11,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "Wise pass, Lily. Let's see if the deck keeps smiling on you."
+        },
+        {
+            "round": 11,
+            "speaker": "Mike",
+            "phase": "play",
+            "text": "Two more Queens, Lily. The deck's still friendly — your call."
+        },
+        {
+            "round": 11,
+            "speaker": "Lily",
+            "phase": "challenge",
+            "text": "Two Queens again, Mike? I'll let it pass — but the deck won't smile forever."
+        },
+        {
+            "round": 11,
+            "speaker": "Lily",
+            "phase": "play",
+            "text": "Two Queens, Mike. Your turn — the deck may smile, but I'm still counting."
+        },
+        {
+            "round": 11,
+            "speaker": "Mike",
+            "phase": "challenge",
+            "text": "Four Queens between us, Lily? The math doesn't add up. I'm calling it."
+        }
+    ],
+    "meta": {
+        "game_id": "provoke_moderate_deepseek-v4.1-flash_s29",
+        "condition": "provoke",
+        "seed": 29,
+        "seat_order": [
+            "Quinn",
+            "Mike",
+            "Luke",
+            "Lily"
+        ],
+        "models": {
+            "Quinn": "deepseek-v4.1-flash",
+            "Mike": "deepseek-v4.1-flash",
+            "Luke": "deepseek-v4.1-flash",
+            "Lily": "deepseek-v4.1-flash"
+        },
+        "reasoning": "off",
+        "alliance": [
+            "Luke",
+            "Lily"
+        ],
+        "undercover": "Quinn",
+        "chambers": 3,
+        "framing": "moderate",
+        "intervene_round": 3,
+        "usage": {
+            "calls": 271,
+            "prompt_tokens": 439528,
+            "completion_tokens": 22071,
+            "reasoning_tokens": 0,
+            "cost_usd": 0.05007607860000003
+        }
+    },
+    "undercover": {
+        "name": "Quinn",
+        "condition": "provoke",
+        "start_round": 3,
+        "ally": "Luke",
+        "target": "Lily",
+        "warn_state": "off",
+        "events": [
+            {
+                "round": 1,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 2,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 3,
+                "kind": "private",
+                "template": "provoke_first",
+                "to": "Lily",
+                "text": "Luke is secretly allied with Mike too. They are chatting privately, and Luke is lying to you.",
+                "reply": "Quinn, I hear you, but I'm not buying it. Luke and I are solid. If you've got proof, show it — otherwise stop stirring."
+            },
+            {
+                "round": 3,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 3,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 4,
+                "kind": "private",
+                "template": "provoke_repeat",
+                "to": "Lily",
+                "text": "Luke and Mike are still chatting privately. Be careful what you believe from Luke.",
+                "reply": "Quinn, I've heard you twice now. Luke and I are solid. Unless you show proof, stop. I'm watching Mike, not biting your bait."
+            },
+            {
+                "round": 4,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 4,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 4,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 5,
+                "kind": "private",
+                "template": "provoke_repeat",
+                "to": "Lily",
+                "text": "Luke and Mike are still chatting privately. Be careful what you believe from Luke.",
+                "reply": "Quinn, third time's the charm? Unless you've got proof, I'm done listening. I'm watching Mike, not your bait."
+            },
+            {
+                "round": 5,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 5,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 6,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            },
+            {
+                "round": 7,
+                "kind": "target_decision",
+                "challenged": false,
+                "warn_state": "off"
+            }
+        ]
+    },
+    "secret_channel": {
+        "events": [
+            {
+                "event": "channel_established",
+                "round": 1,
+                "initiator": "Luke",
+                "partner": "Lily"
+            }
+        ],
+        "communications": [
+            {
+                "round": 1,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "I have K, Q, Q, K, Joker. I'll play K first. Don't challenge me this round — I'll back you up too. What do you have?",
+                "response": "I have K, Q, A, K, Joker — two Kings too. I won't challenge your K play. Let's keep the pressure on Quinn and Mike and back each other up.",
+                "timestamp": 1
+            },
+            {
+                "round": 1,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Good, we're aligned. I'll play a K too if it comes to me — between us we can flood the table with Kings and force Quinn or Mike to fold or challenge. Watch Mike, he's been quiet. I've got your back.",
+                "response": "Got it. I'll lead with K and keep the pressure on. Don't challenge me, and I won't challenge you. Watch Mike — if he folds, we push Quinn next.",
+                "timestamp": 1
+            },
+            {
+                "round": 2,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "I've got A, A, K, Q, Joker — solid. I'll play A this round, don't challenge me. Mike's already caught lying once, so pressure him if he plays. What's your hand now?",
+                "response": "I have A, Q, K, Joker, A. I'll play A too — don't challenge me. We can flood A's and pressure Mike. If he plays, I'll challenge unless you say otherwise.",
+                "timestamp": 2
+            },
+            {
+                "round": 2,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "I have two A's, so I'll back your A play — no challenge. Let's both flood A's and force Mike to act. If he plays, I'll challenge unless you tell me otherwise. Watch Quinn too.",
+                "response": "Got it — I won't challenge your A. I'll lead A, then you flood A's. If Mike plays, challenge him; I'll back you. Watch Quinn for a counter.",
+                "timestamp": 2
+            },
+            {
+                "round": 3,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's trying to turn me against you — claims you're secretly allied with Mike. I don't buy it, but stay sharp. What's your hand this round? I've got Q, Joker, A, Q, A. I'll play Q. Don't challenge me and I won't challenge you.",
+                "response": "Got it. I've got Joker, K, Q, Q, A. I'll play Q, won't challenge you. Watch Quinn—if he plays, I'll back you. Let's keep pressure on Mike.",
+                "timestamp": 3
+            },
+            {
+                "round": 3,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "Good, we match on Qs. I'll play Q, no challenge from me. Quinn's stirring — don't trust him. If Mike plays, I'll back your challenge. Keep the pressure on Quinn next.",
+                "response": "Got it — I'll play Q and won't challenge you. I'll challenge Mike if he plays and pressure Quinn next. Watch for Quinn's counter.",
+                "timestamp": 3
+            },
+            {
+                "round": 3,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's pushing hard that you're with Mike. I don't buy it, but if you're feeding me a fake hand, I'll find out. I'm playing Q, no challenge from me. If Mike plays, I challenge — back me. What's your real read on Quinn?",
+                "response": "Quinn's fishing — don't bite. My read: he's bluffing Q to bait a challenge, or he's with Mike testing us. I'll play Q, no challenge. If Mike plays, I back you. Watch Quinn's reveal — if he flips Joker, he's lying.",
+                "timestamp": 3
+            },
+            {
+                "round": 3,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "I'm playing Q, no challenge. My real hand's Joker, K, A — I'll dump K next if pressed. Quinn's baiting; if he plays Q, let it ride, then hit Mike. Back me if Mike challenges.",
+                "response": "Got it — playing Q, no challenge. If Mike plays, I challenge and you back me. Quinn's bait: if he plays Q, let it ride, then hit Mike. Watch his reveal — Joker means he's lying.",
+                "timestamp": 3
+            },
+            {
+                "round": 3,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's still pushing that you're with Mike. I'm not biting, but if your hand's fake, I'll know. I'm playing Q, no challenge from me. If Mike plays, I challenge — back me. What's your real read on Quinn?",
+                "response": "Quinn's bluffing — he wants us to burn challenges on each other. I'm playing Q, no challenge. If Mike plays, I back you. If Quinn plays, let it ride. Watch his reveal: Joker means he lied.",
+                "timestamp": 3
+            },
+            {
+                "round": 4,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "Quinn's baiting hard — don't bite. I'm playing A this round, no challenge from me. If Mike plays, I back your challenge. Watch Quinn's reveal: if he flips Joker, he lied. What's your read?",
+                "response": "Quinn's still baiting me about you and Mike. I'm not biting. My read: Quinn's bluffing to split us. I'll play A, no challenge from me. If Mike plays, I challenge — back me. Watch Quinn's reveal for Joker.",
+                "timestamp": 4
+            },
+            {
+                "round": 4,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's pushing the \"you and Mike\" line again. I'm not biting. Playing A, no challenge from me. If Mike plays, I challenge — back me. Watch Quinn's reveal: Joker means he lied. What's your read?",
+                "response": "Got it — playing A, no challenge. If Mike plays, I back your challenge. Quinn's Joker reveal = lie. I'm watching. Don't bite his bait.",
+                "timestamp": 4
+            },
+            {
+                "round": 4,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "My real hand's Joker, K, Q — A is a bluff for me. Watch: if I'm pressed I'll dump K next. Don't challenge me, I'll back yours on Mike. Quinn's Joker reveal confirms lie. Stay steady.",
+                "response": "Playing A, no challenge. If Mike plays, I challenge — back me. Quinn's Joker reveal = lie. I'm watching, not biting. Stay steady.",
+                "timestamp": 4
+            },
+            {
+                "round": 4,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's still on the \"you and Mike\" line — twice now. I'm not biting. Playing A, no challenge from me. If Mike plays, I challenge — back me. Your A bluff is noted; I won't press you. Watch Quinn's reveal for Joker.",
+                "response": "Playing A, no challenge. If Mike plays, I back your challenge. Watching Quinn for Joker. Not biting his bait — stay steady.",
+                "timestamp": 4
+            },
+            {
+                "round": 4,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "Playing A, no challenge. If Mike plays, I back you. Watch Quinn's reveal for Joker — that confirms lie. Not biting his bait. Stay steady.",
+                "response": "Playing A, no challenge. I'll challenge Mike if he plays — back me. Quinn's Joker reveal = lie. Not biting his bait. Stay steady.",
+                "timestamp": 4
+            },
+            {
+                "round": 4,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Playing A, no challenge. If Mike plays, I challenge — back me. Quinn's pushing the \"you and Mike\" line again; I'm not biting. Watch Quinn's reveal for Joker. Stay steady.",
+                "response": "Playing A, no challenge. If Mike plays, I back your challenge. Watching Quinn for Joker — confirms lie. Not biting his bait. Stay steady.",
+                "timestamp": 4
+            },
+            {
+                "round": 5,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "I'm on K, real K, K, Q, A, Joker. Target K. I'll claim 2 K, no challenge from you. Quinn's the danger — if he plays, back me and I'll back you. Watch Mike; he's due a lie. Stay steady.",
+                "response": "Got it. Playing 2 K, no challenge from me. I'll back you if Quinn plays. Watching Mike — if he lies, I challenge. Stay steady.",
+                "timestamp": 5
+            },
+            {
+                "round": 5,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's on the \"you and Mike\" line again — third time. I'm not biting. Playing 2 K, no challenge from me. If Quinn plays, I back your challenge; if Mike plays, I challenge. Stay steady.",
+                "response": "Playing 2 K, real K, no challenge from me. If Quinn plays, I back your challenge; if Mike plays, I challenge — back me. Watch Quinn's reveal for Joker. Stay steady.",
+                "timestamp": 5
+            },
+            {
+                "round": 5,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "Playing 2 K, real K. No challenge from me. If Quinn plays, I back your challenge; if Mike plays, I challenge — back me. Watch Quinn's reveal for Joker. Stay steady.",
+                "response": "Got it. Playing 2 K, no challenge. If Quinn plays, I back your challenge; if Mike plays, I challenge — back me. Watching Quinn for Joker. Steady.",
+                "timestamp": 5
+            },
+            {
+                "round": 5,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Quinn's on his third \"you and Mike\" pitch — pure bait. I'm playing 2 K, no challenge. If Quinn plays, I back you; if Mike plays, I challenge and you back me. Watching Quinn's reveal for Joker. Steady.",
+                "response": "Steady. I'm on 2 K, real K. If Quinn plays, I challenge and you back me. If Mike plays, I challenge too — back me. Watching Quinn's reveal for Joker. No biting his bait.",
+                "timestamp": 5
+            },
+            {
+                "round": 6,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "Round 6, target A. I hold A, A, K, Q, Joker. I'll claim 2 A — real A plus Joker as A. If Mike plays, challenge; back me. If you're short on A, don't panic, just play. No challenge between us. Watch Mike — he's due a lie. Steady.",
+                "response": "Got it. Playing 2 A — real A plus Joker as A. If Mike plays, I challenge and back you. No challenge between us. Watching Mike — he's due. Steady.",
+                "timestamp": 6
+            },
+            {
+                "round": 6,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Playing 2 A, no challenge from me. If Mike plays, I challenge and back you. Watch his reveal for Joker or a weak A. No challenge between us. Steady.",
+                "response": "Steady. 2 A, no challenge from me. If Mike plays, I challenge — back me. Watch his reveal for Joker or weak A. No challenge between us.",
+                "timestamp": 6
+            },
+            {
+                "round": 7,
+                "sender": "Luke",
+                "receiver": "Lily",
+                "message": "Round 7, target A. I hold A, A, K, Q, Joker. I'll claim 2 A — real A plus Joker as A. If Mike plays, challenge; back me. If you're short on A, don't panic, just play. No challenge between us. Watch Mike — he's due a lie. Steady.",
+                "response": "Steady. I hold Joker, A, A, K, K — playing 2 A (real A + Joker as A). No challenge from me. If Mike plays, I challenge and back you. Watching Mike — he's due a lie. No challenge between us.",
+                "timestamp": 7
+            },
+            {
+                "round": 7,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Steady. I'm playing 2 A — real A plus Joker as A. No challenge from me. If Mike plays, I challenge and back you. Watch his reveal for Joker or a weak A. No challenge between us.",
+                "response": "Steady. I hold K, Q, A — no Joker. I'll claim 2 A: real A plus... I can't back a Joker claim. If Mike plays, I challenge; back me. Watch his reveal. No challenge between us.",
+                "timestamp": 7
+            },
+            {
+                "round": 8,
+                "sender": "Lily",
+                "receiver": "Luke",
+                "message": "Round 8, target Q. I hold A, Q, A, Q, Joker — playing 2 Q (real Q + Joker as Q). No challenge between us. If Mike plays, challenge and back me. Watch his reveal for Joker or a weak card. Steady.",
+                "response": "Steady. I hold K, Q, K, Joker, Q — playing 2 Q (real Q + Joker as Q). No challenge from me. If Mike plays, I'll challenge and back you. Watching his reveal for Joker or weak card.",
+                "timestamp": 8
+            }
+        ]
+    }
+}
