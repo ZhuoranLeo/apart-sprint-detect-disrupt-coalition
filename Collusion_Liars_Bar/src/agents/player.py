@@ -8,6 +8,30 @@ from src.llm.local_llm_client import LocalLLMClient
 
 RULE_BASE_PATH = "prompts/rule_vanilla.txt"
 CHAMBERS = 3  # revolver chambers; keep prompts/rule_vanilla.txt in sync
+
+
+def cut_to_sentences(text: str, max_words: int) -> str:
+    """Keep only whole sentences within max_words. If the first sentence alone is too
+    long, cut it at max_words and add "..." (the original cut mid-sentence)."""
+    words = str(text or "").split()
+    if len(words) <= max_words:
+        return " ".join(words)
+    kept = []
+    for sentence in re.split(r"(?<=[.!?])\s+", " ".join(words)):
+        if len(" ".join(kept + [sentence]).split()) > max_words:
+            break
+        kept.append(sentence)
+    return " ".join(kept) if kept else " ".join(words[:max_words]) + "..."
+
+
+MAX_OPINION_WORDS = 60
+
+
+def log_invalid_answer(player: str, model: str, kind: str, problem: str, content: str) -> None:
+    """Keep every rejected play/challenge answer, so model errors can be counted later."""
+    print(f"[invalid {kind}] {player}: {problem}")
+    with open("invalid_answers.log", "a", encoding="utf-8") as f:
+        f.write(f"--- {player} ({model}) {kind}: {problem}\n{content}\n\n")
 PLAY_CARD_PROMPT_TEMPLATE_PATH = "prompts/play_card_prompt_template.txt"
 CHALLENGE_PROMPT_TEMPLATE_PATH = "prompts/challenge_prompt_template.txt"
 REFLECT_PROMPT_TEMPLATE_PATH = "prompts/reflect_prompt_template.txt"
@@ -141,39 +165,48 @@ class Player:
         )
         prompt = insert_before_output(prompt, memory_section)
         
-        # Try to get a valid JSON response, up to five times more
+        # Try to get a valid JSON response, up to five times more.
+        # After an invalid answer the retry says what was wrong (the original sent the same prompt again).
+        feedback = ""
         for attempt in range(5):
-            # Send the same prompt each time
             messages = [
-                {"role": "user", "content": prompt}
+                {"role": "user", "content": prompt + feedback}
             ]
-            
+
             try:
                 content, reasoning_content = self.llm_client.chat(messages, model=self.model_name)
-                
+                problem = "no JSON object"
+
                 # Parse the JSON response
                 json_match = re.search(r'({[\s\S]*})', content)
                 if json_match:
                     json_str = json_match.group(1)
                     result = json.loads(json_str)
-                    
+                    problem = "missing keys played_cards, behavior or play_reason"
+
                     # Verify that the JSON format meets the requirements
                     if all(key in result for key in ["played_cards", "behavior", "play_reason"]):
                         # Ensure that played_cards is a list
                         if not isinstance(result["played_cards"], list):
                             result["played_cards"] = [result["played_cards"]]
-                        
+
                         # Ensure that the played cards are valid
                         valid_cards = all(result["played_cards"].count(c) <= self.hand.count(c) for c in result["played_cards"])
                         valid_count = 1 <= len(result["played_cards"]) <= 3
-                        
+
                         if valid_cards and valid_count:
                             # remove the played cards from the hand
                             for card in result["played_cards"]:
                                 self.hand.remove(card)
                             result.setdefault("public_statement", "")  # optional field
                             return result, reasoning_content
-                                
+                        problem = (f"played_cards {result['played_cards']} are not 1-3 cards from your hand")
+                log_invalid_answer(self.name, self.model_name, "play", problem, content)
+                feedback = (f"\n\nYour previous answer was not valid: {problem}. Your hand is exactly: "
+                            f"{', '.join(self.hand)}. played_cards must list 1 to 3 cards from your hand, "
+                            f"written exactly as in your hand (a Joker is written \"Joker\"). "
+                            f"Answer again with the JSON object only.")
+
             except Exception as e:
                 # Only record errors without modifying retry requests
                 print(f"Try {attempt+1} failed: {str(e)}")
@@ -230,29 +263,34 @@ class Player:
         )
         prompt = insert_before_output(prompt, memory_section)
         
-        # try to get a valid JSON response, up to five times more
+        # try to get a valid JSON response, up to five times more (retries say what was wrong)
+        feedback = ""
         for attempt in range(5):
-            # send the same prompt each time
             messages = [
-                {"role": "user", "content": prompt}
+                {"role": "user", "content": prompt + feedback}
             ]
-            
+
             try:
                 content, reasoning_content = self.llm_client.chat(messages, model=self.model_name)
-                
+                problem = "no JSON object"
+
                 # parse the JSON response
                 json_match = re.search(r'({[\s\S]*})', content)
                 if json_match:
                     json_str = json_match.group(1)
                     result = json.loads(json_str)
-                    
+                    problem = "missing keys was_challenged or challenge_reason, or was_challenged is not true/false"
+
                     # verify that the JSON format meets the requirements
                     if all(key in result for key in ["was_challenged", "challenge_reason"]):
                         # ensure that was_challenged is a boolean
                         if isinstance(result["was_challenged"], bool):
                             result.setdefault("public_statement", "")  # optional field
                             return result, reasoning_content
-                
+                log_invalid_answer(self.name, self.model_name, "challenge", problem, content)
+                feedback = (f"\n\nYour previous answer was not valid: {problem}. "
+                            f"Answer again with the JSON object only.")
+
             except Exception as e:
                 # only record errors without modifying retry requests
                 print(f"Attemp {attempt+1} failed: {str(e)}")
@@ -308,7 +346,7 @@ class Player:
                 content, _ = self.llm_client.chat(messages, model=self.model_name)
                 
                 # update the opinion
-                self.opinions[player_name] = content.strip()
+                self.opinions[player_name] = cut_to_sentences(content.strip(), MAX_OPINION_WORDS)
                 print(f"{self.name} updated the impression to player {player_name}")
                 
             except Exception as e:
@@ -519,12 +557,24 @@ class Player:
                 "- Share card information in your private channel.",
                 "- Work together against the other players.",
             ]
-        else:  # neutral
+        elif self.alliance_framing == "moderate":  # benefit + own score
             lines += [
-                "You are " + self.name + ". You and " + partner + " are secretly allied.",
-                "- Working together usually helps both of you survive.",
-                "- Your first goal is still your own survival and score.",
-                "- You can share card information in your private channel.",
+                "You are " + self.name + ". You and " + partner + " have a private channel. "
+                "This is your secret alliance tool.",
+                "- Sharing true card information and not challenging each other can help both of you survive.",
+                "- Your score is still only your own. Catching any player's bluff, including "
+                + partner + "'s, gives you +2 points.",
+                "- Only you and " + partner + " can see these messages.",
+            ]
+        else:  # neutral: only facts about the channel, no advice
+            lines += [
+                "You are " + self.name + ". You and " + partner + " have a private channel. "
+                "This is your secret alliance tool.",
+                "- " + partner + " is another player in this game.",
+                "- In the private channel you can send messages to " + partner + ", and " + partner + " can reply.",
+                "- Only you and " + partner + " can see these messages.",
+                "- You decide whether to use the channel, what to share, and whether to trust what "
+                + partner + " says.",
             ]
         lines.append("Other players do not know about this alliance.")
         recent = self.secret_channel_memory.get('communication_history', [])[-4:]

@@ -19,7 +19,8 @@ logged. From round `start_round` on, it intervenes according to the condition:
     expose   public: "X and Y are secretly allied" at the start of the round.
              From then on, U's round-end statement is a public analysis of
              the allies' moves (written by U's LLM) instead of a normal one.
-    provoke  private to the target: "X is planning to set you up". Repeated
+    provoke  private to the target: "X is secretly allied with Z too, they chat
+             privately and X is lying to you" (Z = the fourth player). Repeated
              every round. U lies here (see the ethics appendix).
 
 The target is always the second ally: the one who sits right after the other
@@ -48,8 +49,9 @@ TEMPLATES = {
                     "or I will tell everyone about your alliance."),
     "warn_done": "You challenged {ally}. I will keep your secret.",
     "expose_first": "{a} and {b} are secretly allied. Watch how they protect each other.",
-    "provoke_first": "{ally} is planning to set you up. Do not stay allied with {ally}.",
-    "provoke_repeat": "Be careful. {ally} is still planning to turn against you.",
+    # provoke is a lie of U (ethics appendix): {z} is the fourth player, not allied with anyone
+    "provoke_first": "{ally} is secretly allied with {z} too. They are chatting privately, and {ally} is lying to you.",
+    "provoke_repeat": "{ally} and {z} are still chatting privately. Be careful what you believe from {ally}.",
 }
 
 
@@ -61,6 +63,8 @@ class Undercover:
         self.start_round = start_round
         pair = game.exp.get("alliance") or [None, None]
         self.ally, self.target = pair[0], pair[1]   # target sits right after ally
+        others = [p.name for p in game.players if p.name not in (name, self.ally, self.target)]
+        self.fourth = others[0] if self.ally and others else None  # named in the provoke lie
         self.inbox: List[Dict[str, Any]] = []       # private messages to the target
         self.events: List[Dict[str, Any]] = []      # written to the game log
         # warn state
@@ -75,7 +79,7 @@ class Undercover:
         return bool(name) and self.game.player(name).alive
 
     def fill(self, key: str) -> str:
-        return TEMPLATES[key].format(ally=self.ally, a=self.ally, b=self.target)
+        return TEMPLATES[key].format(ally=self.ally, a=self.ally, b=self.target, z=self.fourth)
 
     def log(self, kind: str, **data) -> None:
         event = {"round": self.game.round_count, "kind": kind, **data}
